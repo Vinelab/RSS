@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Vinelab/RSS.png)](https://travis-ci.org/Vinelab/RSS)
+
 ## RSS 2.0 Client
 
 ## Installation
