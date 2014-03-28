@@ -5,7 +5,7 @@
 ## Installation
 Refer to [vinelab/rss on packagist.org](https://packagist.org/packages/vinelab/rss) for composer installation instructions.
 
-Edit **app.php** and add ```'Vinelab\Http\HttpServiceProvider',``` to the ```'providers'``` array.
+Edit **app.php** and add ```'Vinelab\Rss\RssServiceProvider',``` to the ```'providers'``` array.
 
 It will automatically alias itself as **RSS** so no need to aslias it in your **app.php** unless you would like to customize it. In that case edit your **'aliases'** in **app.php** adding ``` 'MyRSS'    => 'Vinelab\Rss\Facades\RSS',```
 
