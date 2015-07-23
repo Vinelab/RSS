@@ -68,7 +68,7 @@ class Rss {
      */
     public function prepareURL($url)
     {
-        return preg_replace('/^feed:\/\//', 'http://', $feed_url);
+        return preg_replace('/^feed:\/\//', 'http://', $url);
     }
 
     /**
