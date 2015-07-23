@@ -1,5 +1,9 @@
-<?php namespace Vinelab\Rss\Exceptions;
+<?php
+
+namespace Vinelab\Rss\Exceptions;
 
 use RuntimeException;
 
-class RssException extends RuntimeException {}
+class RssException extends RuntimeException
+{
+}

@@ -1,3 +1,7 @@
-<?php namespace Vinelab\Rss\Exceptions;
+<?php
 
-class InvalidFeedFormatException extends RssException {}
+namespace Vinelab\Rss\Exceptions;
+
+class InvalidFeedFormatException extends RssException
+{
+}

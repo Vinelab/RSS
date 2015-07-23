@@ -1,14 +1,15 @@
-<?php namespace Vinelab\Rss;
+<?php
+
+namespace Vinelab\Rss;
 
 use Vinelab\Http\Client;
 use Vinelab\Rss\Parsers\XML;
 use Vinelab\Rss\Parsers\JSON;
 use Vinelab\Http\Client as HttpClient;
-
 use Vinelab\Rss\Exceptions\InvalidFeedFormatException;
 
-class Rss {
-
+class Rss
+{
     /**
      * The XML parser instance.
      *
@@ -32,15 +33,16 @@ class Rss {
 
     public function __construct(XML $xml, HttpClient $http)
     {
-        $this->xml  = $xml;
+        $this->xml = $xml;
         $this->http = $http;
     }
 
     /**
      * Fetch and return an RSS feed.
      *
-     * @param  string $url
-     * @param  string $format
+     * @param string $url
+     * @param string $format
+     *
      * @return Vinelab\Rss\ArticlesCollection
      */
     public function feed($url, $format = 'xml')
@@ -51,7 +53,8 @@ class Rss {
     /**
      * Fetch the feed from source.
      *
-     * @param  string $url
+     * @param string $url
+     *
      * @return mixed
      */
     public function fetch($url)
@@ -63,7 +66,8 @@ class Rss {
      * Prepares a feed URL to be
      * requestable.
      *
-     * @param  string $url
+     * @param string $url
+     *
      * @return string
      */
     public function prepareURL($url)
@@ -74,14 +78,14 @@ class Rss {
     /**
      * Prases the feed according to the format.
      *
-     * @param  mixed $feed
-     * @param  string $format
+     * @param mixed  $feed
+     * @param string $format
+     *
      * @return Vinelab\Rss\ArticlesCollection
      */
     public function parse($response, $format)
     {
-        switch($format)
-        {
+        switch ($format) {
             case 'xml':
                 return $this->xml->parse($response->xml());
             break;

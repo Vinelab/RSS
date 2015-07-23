@@ -1,3 +1,7 @@
-<?php namespace Vinelab\Rss\Exceptions;
+<?php
 
-class InvalidXMLException extends RssException {}
+namespace Vinelab\Rss\Exceptions;
+
+class InvalidXMLException extends RssException
+{
+}

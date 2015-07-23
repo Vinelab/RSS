@@ -1,7 +1,9 @@
-<?php namespace Vinelab\Rss\Contracts;
+<?php
 
-interface FeedInterface {
+namespace Vinelab\Rss\Contracts;
 
+interface FeedInterface
+{
     public static function make($channel);
 
     public function addArticle($entry);

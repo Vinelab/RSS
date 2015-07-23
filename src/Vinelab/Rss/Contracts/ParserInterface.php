@@ -1,6 +1,8 @@
-<?php namespace Vinelab\Rss\Contracts;
+<?php
 
-interface ParserInterface {
+namespace Vinelab\Rss\Contracts;
 
+interface ParserInterface
+{
     public function parse($feed);
 }

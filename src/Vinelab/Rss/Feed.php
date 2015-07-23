@@ -1,9 +1,9 @@
-<?php namespace Vinelab\Rss;
+<?php
 
-use Vinelab\Rss\Exceptions\InvalidXMLException;
+namespace Vinelab\Rss;
 
-class Feed implements Contracts\FeedInterface {
-
+class Feed implements Contracts\FeedInterface
+{
     /**
      * Information about the feed.
      *
@@ -20,9 +20,8 @@ class Feed implements Contracts\FeedInterface {
 
     public function __construct($channel)
     {
-        if ( ! is_array($channel))
-        {
-            throw new InvalidFeedChannelException;
+        if (!is_array($channel)) {
+            throw new InvalidFeedChannelException();
         }
 
         $this->setInfo($channel);
@@ -54,10 +53,9 @@ class Feed implements Contracts\FeedInterface {
      */
     public function setArticles($channel)
     {
-        $this->articles = new ArticlesCollection;
+        $this->articles = new ArticlesCollection();
 
-        foreach ($channel['item'] as $entry)
-        {
+        foreach ($channel['item'] as $entry) {
             $this->addArticle($entry);
         }
     }
@@ -99,7 +97,7 @@ class Feed implements Contracts\FeedInterface {
     /**
      * The number of articles in this feed.
      *
-     * @return integer
+     * @return int
      */
     public function articlesCount()
     {
@@ -108,8 +106,7 @@ class Feed implements Contracts\FeedInterface {
 
     public function __get($attr)
     {
-        if ($attr === 'articles')
-        {
+        if ($attr === 'articles') {
             return $this->articles;
         }
 

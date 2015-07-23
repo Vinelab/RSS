@@ -1,7 +1,9 @@
-<?php namespace Vinelab\Rss;
+<?php
 
-class Article {
+namespace Vinelab\Rss;
 
+class Article
+{
     /**
      * Holds the article information.
      *
@@ -16,8 +18,7 @@ class Article {
      */
     public function __construct($article)
     {
-        foreach ($article as $attribute => $value)
-        {
+        foreach ($article as $attribute => $value) {
             $this->info[$attribute] = (string) $value;
         }
     }
@@ -25,7 +26,8 @@ class Article {
     /**
      * Instantiate an Article.
      *
-     * @param  mixed $article
+     * @param mixed $article
+     *
      * @return Vinelab\Rss\Article
      */
     public static function make($article)
@@ -36,7 +38,8 @@ class Article {
     /**
      * A gateway to return the data stored in $info.
      *
-     * @param  string $element
+     * @param string $element
+     *
      * @return mixed
      */
     public function __get($element)

@@ -1,13 +1,13 @@
-<?php namespace Vinelab\Rss\Tests\Parsers;
+<?php
+
+namespace Vinelab\Rss\Tests\Parsers;
 
 use PHPUnit_Framework_TestCase as TestCase;
-use Mockery as M;
-
 use SimpleXMLElement;
 use Vinelab\Rss\Parsers\XML;
 
-class XMLTest extends TestCase {
-
+class XMLTest extends TestCase
+{
     public static $feed;
 
     public static $hunger;
@@ -16,8 +16,8 @@ class XMLTest extends TestCase {
 
     public static function setUpBeforeClass()
     {
-        self::$hunger  = 'something that is not XML';
-        self::$feed    = new SimpleXMLElement(file_get_contents('./tests/feeds/xxx.xml'));
+        self::$hunger = 'something that is not XML';
+        self::$feed = new SimpleXMLElement(file_get_contents('./tests/feeds/xxx.xml'));
         self::$invalid = new SimpleXMLElement(file_get_contents('./tests/feeds/invalid.xml'));
     }
 
@@ -31,8 +31,8 @@ class XMLTest extends TestCase {
         $feed = self::$feed;
         $feed = $this->xml->parse($feed);
 
-        $this->assertInstanceOf('Vinelab\Rss\Contracts\FeedInterface',$feed);
-        $this->assertInstanceOf('Vinelab\Rss\Feed',$feed);
+        $this->assertInstanceOf('Vinelab\Rss\Contracts\FeedInterface', $feed);
+        $this->assertInstanceOf('Vinelab\Rss\Feed', $feed);
     }
 
     /**
