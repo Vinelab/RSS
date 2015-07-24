@@ -21,7 +21,7 @@ class RssServiceProvider extends ServiceProvider
         $this->app->register('Vinelab\Http\HttpServiceProvider');
 
         $this->app->bind('vinelab.rss', function ($app) {
-            return new RSS($app->make('Vinelab\Rss\Parsers\XML'),
+            return new Rss($app->make('Vinelab\Rss\Parsers\XML'),
                             $app->make('Vinelab\Http\Client'));
         });
 
