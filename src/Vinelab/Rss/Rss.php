@@ -31,10 +31,10 @@ class Rss
      */
     protected $http;
 
-    public function __construct(XML $xml, HttpClient $http)
+    public function __construct(XML $xml = null, HttpClient $http = null)
     {
-        $this->xml = $xml;
-        $this->http = $http;
+        $this->xml = $xml ?: new XML();
+        $this->http = $http ?: new HttpClient();
     }
 
     /**
