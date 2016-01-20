@@ -36,6 +36,18 @@ class Article
     }
 
     /**
+     * Check if data stored in $info is set.
+     *
+     * @param string $element
+     *
+     * @return boolean
+     */
+    public function __isset($element)
+    {
+        return isset($this->info[$element]);
+    }
+
+    /**
      * A gateway to return the data stored in $info.
      *
      * @param string $element
