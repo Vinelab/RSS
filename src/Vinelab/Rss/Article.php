@@ -46,4 +46,16 @@ class Article
     {
         return isset($this->info[$element]) ? $this->info[$element] : null;
     }
+    
+    /**
+     * A gateway to check for the data stored in $info.
+     *
+     * @param string $element
+     *
+     * @return bool
+     */
+    public function __isset($element)
+    {
+        return array_key_exists($element, $this->info);
+    }
 }
