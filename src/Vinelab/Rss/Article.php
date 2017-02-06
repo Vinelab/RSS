@@ -19,7 +19,13 @@ class Article
     public function __construct($article)
     {
         foreach ($article as $attribute => $value) {
-            $this->info[$attribute] = (string) $value;
+            // for enclosure, get the attributes as array
+            if ($attribute == 'enclosure')
+                $value = current($value->attributes());
+            else
+                $value = (string) $value;
+
+            $this->info[$attribute] = $value;
         }
     }
 
