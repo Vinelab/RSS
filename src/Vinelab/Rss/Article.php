@@ -5,6 +5,13 @@ namespace Vinelab\Rss;
 class Article
 {
     /**
+     * Holds the original SimpleXMLElement
+     *
+     * @var SimpleXMLElement
+     */
+    protected $element = null;
+
+    /**
      * Holds the article information.
      *
      * @var array
@@ -18,8 +25,16 @@ class Article
      */
     public function __construct($article)
     {
+        $this->element = $article;
+
         foreach ($article as $attribute => $value) {
-            $this->info[$attribute] = (string) $value;
+            // for enclosure, get the attributes as array
+            if ($attribute == 'enclosure')
+                $value = current($value->attributes());
+            else
+                $value = (string) $value;
+
+            $this->info[$attribute] = $value;
         }
     }
 
@@ -33,6 +48,16 @@ class Article
     public static function make($article)
     {
         return new static($article);
+    }
+
+    /**
+     * Get the original SimpleXMLElement
+     *
+     * @return SimpleXMLElement
+     */
+    public function getElement()
+    {
+        return $this->element;
     }
 
     /**
