@@ -21,8 +21,8 @@ class XMLTest extends TestCase
     public static function setUpBeforeClass() : void
     {
         self::$hunger = 'something that is not XML';
-        self::$feed = new SimpleXMLElement(file_get_contents(__DIR__.'/feeds/valid.xml'));
-        self::$invalid = new SimpleXMLElement(file_get_contents(__DIR__.'/feeds/invalid.xml'));
+        self::$feed = new SimpleXMLElement(file_get_contents(__DIR__ . '/samples/valid.xml'));
+        self::$invalid = new SimpleXMLElement(file_get_contents(__DIR__ . '/samples/invalid.xml'));
     }
 
     public function setUp() : void
