@@ -1,0 +1,1846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">Newest questions tagged php - Stack Overflow</title>
+    <subtitle>most recent 30 from stackoverflow.com</subtitle>
+    <updated>2020-07-16T19:14:29Z</updated>
+    <id>https://stackoverflow.com/feeds/tag?tagnames=php&amp;sort=newest</id>
+    <creativeCommons:license>https://creativecommons.org/licenses/by-sa/4.0/rdf</creativeCommons:license>
+    <entry>
+        <id>https://stackoverflow.com/q/62941996</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How Can I collapse the table rows of printed page?</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="html"/>
+        <category scheme="https://stackoverflow.com/tags" term="css"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysqli"/>
+        <author>
+            <name>Shuvo Sundar</name>
+            <uri>https://stackoverflow.com/users/11373491</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941996/how-can-i-collapse-the-table-rows-of-printed-page"/>
+        <published>2020-07-16T19:13:55Z</published>
+        <updated>2020-07-16T19:13:55Z</updated>
+        <summary type="html">
+            &lt;p&gt;I was trying to change the style of printed paper.Here you can see the client details and service details. I want to replace the only client details from down to upper portion of the right side.And also all tables be collapsed(Only service details area).I am trying but it's showing error.
+            Please help me out.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php
+            session_start();
+            error_reporting(0);
+            include('includes/dbconnection.php');
+            if (strlen($_SESSION['clientmsaid']==0)) {
+            header('location:logout.php');
+            } else{
+            ?&amp;gt;
+
+            &amp;lt;!DOCTYPE HTML&amp;gt;
+            &amp;lt;html&amp;gt;
+            &amp;lt;head&amp;gt;
+            &amp;lt;title&amp;gt;Client Management Sysytem || View Invoice &amp;lt;/title&amp;gt;
+            &amp;lt;script type=&amp;quot;application/x-javascript&amp;quot;&amp;gt; addEventListener(&amp;quot;load&amp;quot;, function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } &amp;lt;/script&amp;gt;
+            &amp;lt;!-- Bootstrap Core CSS --&amp;gt;
+            &amp;lt;link href=&amp;quot;css/bootstrap.min.css&amp;quot; rel='stylesheet' type='text/css' /&amp;gt;
+            &amp;lt;!-- Custom CSS --&amp;gt;
+            &amp;lt;link href=&amp;quot;css/style.css&amp;quot; rel='stylesheet' type='text/css' /&amp;gt;
+            &amp;lt;!-- Graph CSS --&amp;gt;
+            &amp;lt;link href=&amp;quot;css/font-awesome.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt;
+            &amp;lt;!-- jQuery --&amp;gt;
+            &amp;lt;link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'&amp;gt;
+            &amp;lt;!-- lined-icons --&amp;gt;
+            &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;css/icon-font.min.css&amp;quot; type='text/css' /&amp;gt;
+            &amp;lt;!-- /js --&amp;gt;
+            &amp;lt;script src=&amp;quot;js/jquery-1.10.2.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+            &amp;lt;!-- //js--&amp;gt;
+            &amp;lt;/head&amp;gt;
+            &amp;lt;body&amp;gt;
+            &amp;lt;div class=&amp;quot;page-container&amp;quot;&amp;gt;
+            &amp;lt;!--/content-inner--&amp;gt;
+            &amp;lt;div class=&amp;quot;left-content&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;inner-content&amp;quot;&amp;gt;
+            &amp;lt;!-- header-starts --&amp;gt;
+            &amp;lt;?php include_once('includes/header.php');?&amp;gt;
+            &amp;lt;!-- //header-ends --&amp;gt;
+            &amp;lt;!--outter-wp--&amp;gt;
+            &amp;lt;div class=&amp;quot;outter-wp&amp;quot;&amp;gt;
+            &amp;lt;!--sub-heard-part--&amp;gt;
+            &amp;lt;div class=&amp;quot;sub-heard-part&amp;quot;&amp;gt;
+            &amp;lt;ol class=&amp;quot;breadcrumb m-b-0&amp;quot;&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;dashboard.php&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;View Invoice&amp;lt;/li&amp;gt;
+            &amp;lt;/ol&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;!--//sub-heard-part--&amp;gt;
+            &amp;lt;div class=&amp;quot;graph-visual tables-main&amp;quot; id=&amp;quot;exampl&amp;quot;&amp;gt;
+
+
+            &amp;lt;h3 class=&amp;quot;inner-tittle two&amp;quot;&amp;gt;Invoice Details &amp;lt;/h3&amp;gt;
+            &amp;lt;h4 class=&amp;quot;&amp;quot;&amp;gt;PS Infosystem &amp;lt;/h4&amp;gt;
+            &amp;lt;h6 class=&amp;quot;&amp;quot;&amp;gt;Technology for Innovators &amp;lt;/h6&amp;gt;
+            &amp;lt;h5 class=&amp;quot;&amp;quot;&amp;gt;Kolkata, India&amp;lt;br&amp;gt;Phone: +917003577245&amp;lt;br&amp;gt;Email: ps.infosystem00@gmail.com &amp;lt;br&amp;gt;Website: www.psinfosystem.in &amp;lt;/h5&amp;gt;
+            &amp;lt;?php
+            $invid=intval($_GET['invoiceid']);
+            $sql=&amp;quot;select distinct tblclient.ContactName,tblclient.CompanyName,tblclient.Workphnumber,tblclient.Email,tblclient.AccountID,tblinvoice.BillingId,tblinvoice.PostingDate from  tblclient
+            join tblinvoice on tblclient.ID=tblinvoice.Userid  where tblinvoice.BillingId=:invid&amp;quot;;
+            $query = $dbh -&amp;gt; prepare($sql);
+            $query-&amp;gt;bindParam(':invid',$invid,PDO::PARAM_STR);
+            $query-&amp;gt;execute();
+
+            $results=$query-&amp;gt;fetchAll(PDO::FETCH_OBJ);
+
+            $cnt=1;
+            if($query-&amp;gt;rowCount() &amp;gt; 0)
+            {
+            foreach($results as $row)
+            {               ?&amp;gt;
+            &amp;lt;div class=&amp;quot;graph&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;tables&amp;quot;&amp;gt;
+
+            &amp;lt;h4&amp;gt;Invoice #&amp;lt;?php echo $invid;?&amp;gt;&amp;lt;/h4&amp;gt;
+            &amp;lt;table class=&amp;quot;table table-bordered&amp;quot; width=&amp;quot;100%&amp;quot; border=&amp;quot;1&amp;quot;&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th colspan=&amp;quot;8&amp;quot;&amp;gt;Client Details&amp;lt;/th&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th&amp;gt;Comapny Name&amp;lt;/th&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php  echo htmlentities($row-&amp;gt;CompanyName);?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;th&amp;gt;Contact Name&amp;lt;/th&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php  echo htmlentities($row-&amp;gt;ContactName);?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;th&amp;gt;Contact no.&amp;lt;/th&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php  echo htmlentities($row-&amp;gt;Workphnumber);?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;th&amp;gt;Email &amp;lt;/th&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php  echo htmlentities($row-&amp;gt;Email);?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th&amp;gt;Account ID&amp;lt;/th&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo htmlentities($row-&amp;gt;AccountID);?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;th&amp;gt;Invoice Date&amp;lt;/th&amp;gt;
+            &amp;lt;td colspan=&amp;quot;6&amp;quot;&amp;gt;&amp;lt;?php echo  htmlentities($row-&amp;gt;PostingDate);?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;?php $cnt=$cnt+1;}} ?&amp;gt;
+            &amp;lt;/table&amp;gt;
+            &amp;lt;table class=&amp;quot;table table-bordered&amp;quot; width=&amp;quot;100%&amp;quot; border=&amp;quot;1&amp;quot;&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th colspan=&amp;quot;3&amp;quot;&amp;gt;Services Details&amp;lt;/th&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th&amp;gt;#&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Service&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Cost&amp;lt;/th&amp;gt;
+            &amp;lt;/tr&amp;gt;
+
+            &amp;lt;?php
+            $ret=&amp;quot;select tblservices.ServiceName,tblservices.ServicePrice
+            from  tblinvoice
+            join tblservices on tblservices.ID=tblinvoice.ServiceId
+            where tblinvoice.BillingId=:invid&amp;quot;;
+            $query1 = $dbh -&amp;gt; prepare($ret);
+            $query1-&amp;gt;bindParam(':invid',$invid,PDO::PARAM_STR);
+            $query1-&amp;gt;execute();
+
+            $results=$query1-&amp;gt;fetchAll(PDO::FETCH_OBJ);
+
+            $cnt = 1;
+            if($query1-&amp;gt;rowCount() &amp;gt; 0)
+            {
+            foreach($results as $row1)
+            {               ?&amp;gt;
+
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th&amp;gt;&amp;lt;?php echo $cnt;?&amp;gt;&amp;lt;/th&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row1-&amp;gt;ServiceName?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo &amp;quot;₹&amp;quot;.$subtotal=$row1-&amp;gt;ServicePrice?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;/tr&amp;gt;
+
+            &amp;lt;?php $cnt = $cnt+1;
+            $gtotal += $subtotal;
+            }
+
+            } ?&amp;gt;
+
+
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th colspan=&amp;quot;2&amp;quot; style=&amp;quot;text-align:center&amp;quot;&amp;gt;Grand Total(Including GST)&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;&amp;lt;?php echo &amp;quot;₹&amp;quot;.$gtotal?&amp;gt;&amp;lt;/th&amp;gt;
+
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;/table&amp;gt;
+            &amp;lt;p align=&amp;quot;center&amp;quot;&amp;gt;N.B: This is computer generated copy,No signature required.&amp;lt;br&amp;gt;If you have any questions concerning this invoice, contact: your name &amp;amp; invoice id at our website www.psinfosystem.in&amp;lt;br&amp;gt;Thank you for your business! Visit again!&amp;lt;/p&amp;gt;
+            &amp;lt;h5 align=&amp;quot;left&amp;quot;&amp;gt;PS Infosystem, Kolkata,  Phone: +917003577245,  Email: ps.infosystem00@gmail.com,  Website: www.psinfosystem.in&amp;lt;/h5&amp;gt;
+            &amp;lt;p style=&amp;quot;margin-top:1%&amp;quot;  align=&amp;quot;center&amp;quot;&amp;gt;
+            &amp;lt;i class=&amp;quot;fa fa-print fa-2x&amp;quot; style=&amp;quot;cursor: pointer;&amp;quot;  OnClick=&amp;quot;CallPrint(this.value)&amp;quot; &amp;gt;&amp;lt;/i&amp;gt;
+            &amp;lt;/p&amp;gt;
+
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;/div&amp;gt;
+            &amp;lt;!--//graph-visual--&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;!--//outer-wp--&amp;gt;
+            &amp;lt;?php include_once('includes/footer.php');?&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;!--//content-inner--&amp;gt;
+            &amp;lt;!--/sidebar-menu--&amp;gt;
+            &amp;lt;?php include_once('includes/sidebar.php');?&amp;gt;
+            &amp;lt;div class=&amp;quot;clearfix&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;script&amp;gt;
+            var toggle = true;
+
+            $(&amp;quot;.sidebar-icon&amp;quot;).click(function() {
+            if (toggle)
+            {
+            $(&amp;quot;.page-container&amp;quot;).addClass(&amp;quot;sidebar-collapsed&amp;quot;).removeClass(&amp;quot;sidebar-collapsed-back&amp;quot;);
+            $(&amp;quot;#menu span&amp;quot;).css({&amp;quot;position&amp;quot;:&amp;quot;absolute&amp;quot;});
+            }
+            else
+            {
+            $(&amp;quot;.page-container&amp;quot;).removeClass(&amp;quot;sidebar-collapsed&amp;quot;).addClass(&amp;quot;sidebar-collapsed-back&amp;quot;);
+            setTimeout(function() {
+            $(&amp;quot;#menu span&amp;quot;).css({&amp;quot;position&amp;quot;:&amp;quot;relative&amp;quot;});
+            }, 400);
+            }
+
+            toggle = !toggle;
+            });
+            &amp;lt;/script&amp;gt;
+            &amp;lt;!--js --&amp;gt;
+            &amp;lt;script src=&amp;quot;js/jquery.nicescroll.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+            &amp;lt;script src=&amp;quot;js/scripts.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+            &amp;lt;!-- Bootstrap Core JavaScript --&amp;gt;
+            &amp;lt;script src=&amp;quot;js/bootstrap.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+            &amp;lt;script&amp;gt;
+            function CallPrint(strid) {
+            var prtContent = document.getElementById(&amp;quot;exampl&amp;quot;);
+            var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+            WinPrint.document.write(prtContent.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
+            }
+            &amp;lt;/script&amp;gt;
+            &amp;lt;/body&amp;gt;
+            &amp;lt;/html&amp;gt;
+            &amp;lt;?php }  ?&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941992</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Getting user data with Laravel Sanctum</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel-passport"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel-sanctum"/>
+        <author>
+            <name>she hates me</name>
+            <uri>https://stackoverflow.com/users/159354</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941992/getting-user-data-with-laravel-sanctum"/>
+        <published>2020-07-16T19:13:47Z</published>
+        <updated>2020-07-16T19:13:47Z</updated>
+        <summary type="html">
+            &lt;p&gt;I was using Laravel's built-in api token authentication before but I wanted to provide multiple api tokens for different clients and with Laravel 7.x, I'm trying to migrate to Laravel Sanctum.&lt;/p&gt;
+            &lt;p&gt;API seems authenticates user without any problem but when I try to get user data with &lt;code&gt;Auth::user();&lt;/code&gt;, it returns null. Also &lt;code&gt; Auth::guard('api')-&amp;gt;user();&lt;/code&gt; returns null too.&lt;/p&gt;
+            &lt;p&gt;What should I use as Auth guard? Or is it correct way to get user data based on provided token?&lt;/p&gt;
+            &lt;p&gt;Thank you very much....&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941662</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Open a dynamic link with a Coupon Code as $_GET value</title>
+        <category scheme="https://stackoverflow.com/tags" term="javascript"/>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="wordpress"/>
+        <category scheme="https://stackoverflow.com/tags" term="onclick"/>
+        <category scheme="https://stackoverflow.com/tags" term="window"/>
+        <author>
+            <name>Shinox</name>
+            <uri>https://stackoverflow.com/users/11509445</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941662/open-a-dynamic-link-with-a-coupon-code-as-get-value"/>
+        <published>2020-07-16T18:51:20Z</published>
+        <updated>2020-07-16T18:51:20Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have a question about the win.open function. I would like to create a dynamic link that will insert a $ _GET variable from PHP at the end every time a certain button is clicked. Unfortunately for some reason I don't get the $ _GET variable. This link creates a PDF from this $ _GET variable. Voucher codes are stored in the $ _GET variable.&lt;/p&gt;
+            &lt;p&gt;Here is my PHP file:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+            $return_value = igv_get_pdf_gutscheincodes( $checkbox_id_entwerten, $gutschein_code );
+
+            //Transfer PHP Variable into JavaScript Code
+            &amp;lt;script&amp;gt;
+            &amp;lt;?php
+            $res = explode( ',', $return_value );
+            ?&amp;gt;
+
+            var coupon = [&amp;lt;?php echo '&amp;quot;'.implode('&amp;quot;,&amp;quot;', $res).'&amp;quot;' ?&amp;gt;]
+            &amp;lt;/script&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;igv_pdf_couponcodes() Function with igv_get_gutschein() Function and igv_get_selected_gutscheincodes_for_pdf() Function:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;function igv_get_gutschein( $value ) {
+            global $wpdb;
+            $gutscheine_ids = $wpdb-&amp;gt;get_results( &amp;quot;SELECT * FROM &amp;quot; . $wpdb-&amp;gt;prefix . &amp;quot;igv_gutscheine WHERE gutscheincode = &amp;quot; . $value , OBJECT ); //phpcs:ignore
+            return $gutscheine_ids;
+            }
+
+            function igv_pdf_couponcodes( $checkbox_id_entwerten, $gutschein_code ) {
+            $explode_search_ids = $gutschein_code;
+            $code_ids = array();
+            foreach ( $explode_search_ids as $key =&amp;gt; $value ) {
+            $results = igv_get_gutschein( $value );
+            foreach ( $results as $key_results =&amp;gt; $value_results ) {
+            if ( ! empty( $value_results-&amp;gt;ausgegeben_am ) ) {
+            if ( isset( $checkbox_id_entwerten ) ) {
+            $gid = $value_results-&amp;gt;gutscheincode;
+            $code_ids[ $value_results-&amp;gt;gutscheincode ] = $value_results-&amp;gt;gutscheincode;
+            $gutschein_ids_entwerten = igv_get_selected_gutscheincodes_for_pdf( $code_ids, $gid );
+            if ( $checkbox_id_entwerten[$key] == $key) {
+            $return_value = $gutschein_ids_entwerten;
+            }
+            }
+            }
+            }
+            }
+            return $return_value;
+            }
+
+            function igv_get_selected_gutscheincodes_for_pdf( $code_ids, $gid ) {
+            if ( ! empty( $code_ids ) ) {
+            if ( count( $code_ids ) &amp;gt; 1 ) {
+            $gutschein_ids = implode( ',' , $code_ids );
+            } else {
+            $gutschein_ids = $code_ids[ $gid ];
+            }
+            }
+            return $gutschein_ids;
+            }
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;All this function says is that the last coupon codes that were entered AND those selected with the checkbox are saved and returned. The returned value is output in my PHP file above by the function call.&lt;/p&gt;
+            &lt;p&gt;My Javascript function looks like this:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$(document).on('click','#hellobutton',function(e) {
+            var res = coupon.join('');
+            var win = window.open();
+            win.location = igvscript.pluginsUrl + 'SOME NON DYNAMIC LINK URLS' + res;
+            win.opener = null;
+            win.blur();
+            window.focus();
+            });
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;If anyone could help me with this problem it would be really helpful for me&lt;/p&gt;
+            &lt;p&gt;thanks in advance,&lt;/p&gt;
+            &lt;p&gt;A helpless PHP programmer who has no idea about JavaScript ;).&lt;/p&gt;
+            &lt;p&gt;P.S: Please don't be surprised about the German variable names. I'm from Germany&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941632</id>
+        <re:rank scheme="https://stackoverflow.com">-1</re:rank>
+        <title type="text">Error in PDO Mysql Insertion with record verification [duplicate]</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <category scheme="https://stackoverflow.com/tags" term="pdo"/>
+        <author>
+            <name>Jackpot</name>
+            <uri>https://stackoverflow.com/users/8782668</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941632/error-in-pdo-mysql-insertion-with-record-verification"/>
+        <published>2020-07-16T18:49:09Z</published>
+        <updated>2020-07-16T19:06:13Z</updated>
+        <summary type="html">
+            &lt;p&gt;Good evening geniuses,&lt;/p&gt;
+            &lt;p&gt;I am stuck in my code during a mysql insertion in BD that I would like to do in PDO.&lt;/p&gt;
+            &lt;p&gt;The objective is to check first if the email and the identifier of this user is not already used, if this is not the case, this is how I will proceed to the insertion in bd.&lt;/p&gt;
+            &lt;p&gt;My DB is composed of a &amp;quot;Person&amp;quot; table with as attribute:&lt;/p&gt;
+            &lt;ul&gt;
+            &lt;li&gt;id&lt;/li&gt;
+            &lt;li&gt;username&lt;/li&gt;
+            &lt;li&gt;last name,&lt;/li&gt;
+            &lt;li&gt;age&lt;/li&gt;
+            &lt;li&gt;dateRecording&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;My problem lies first in the verification of the existence of the username and email in the DB and then the insertion.&lt;/p&gt;
+            &lt;p&gt;Below is my code and thank you in advance for your help.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php
+            //The data is submitted by POST using a form found on the previous page.
+            $email=$_POST['email'];
+            $username=$_POST['username'];
+            $RecordDuplicationVerification = $pdo-&amp;gt;prepare(&amp;quot;SELECT * FROM Personne WHERE username =? AND email = ?&amp;quot;);
+            $RecordDuplicationVerification-&amp;gt;execute([$username]);
+            $EtatDuplication = $RecordDuplicationVerification-&amp;gt;fetch();
+
+            if($EtatDuplication){
+            //If the same username and email is already in the database
+            die( &amp;quot;&amp;lt;center&amp;gt;&amp;lt;p class='NumeroIndispo'&amp;gt;&amp;lt;img src='../img/Warning.png' width='150' height='150'&amp;gt;&amp;lt;br&amp;gt;Sorry, this username and / or email address is already in use by another user&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/center&amp;gt;&amp;quot;);
+            }else{
+            //Same username &amp;amp;&amp;amp; email are not found, execute the INSERT
+
+            $Insertion = $pdo-&amp;gt;prepare('INSERT INTO Personne VALUES
+            (NULL,
+            :username,
+            :nom,
+            :age,
+            :email,
+            CURRENT_TIMESTAMP)');
+
+            //We link each marker to a value
+            $Insertion-&amp;gt;bindValue(':username', $_POST['username'], PDO::PARAM_STR);
+            $Insertion-&amp;gt;bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+            $Insertion-&amp;gt;bindValue(':age', $_POST['age'], PDO::PARAM_STR);
+            $Insertion-&amp;gt;bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+
+            //Execution of the prepared request
+            $insertIsOk = $Insertion-&amp;gt;execute();
+
+            if($insertIsOk){
+            $message = &amp;quot;Congratulations! The recording took place with successes&amp;quot;;
+            }else{
+            $message = &amp;quot;A problem occurred during registration&amp;quot;;
+            }
+            ?&amp;gt;
+
+            &amp;lt;html&amp;gt;
+            &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;
+            &amp;lt;body&amp;gt;
+            &amp;lt;?php echo $message; ?&amp;gt;
+            &amp;lt;/body&amp;gt;
+            &amp;lt;/html&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941597</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Json Encode Returns Collumn Numbers from PhpMysql [duplicate]</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <category scheme="https://stackoverflow.com/tags" term="json"/>
+        <category scheme="https://stackoverflow.com/tags" term="api-design"/>
+        <author>
+            <name>NyP</name>
+            <uri>https://stackoverflow.com/users/9080916</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941597/json-encode-returns-collumn-numbers-from-phpmysql"/>
+        <published>2020-07-16T18:47:02Z</published>
+        <updated>2020-07-16T18:47:02Z</updated>
+        <summary type="html">
+            &lt;p&gt;This code is supposed to echo all data from a MySQL db to JSON through  header('Content-Type:Application/json'). Unfortunately the code is This code above echoing each parameter twice and is also echoing the column names which is not what is needed. Kindly help!!!!!!&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php
+            $page_number = $_GET['page_number'];
+            $item_count = $_GET['item_count'];
+            $from = $page_number*$item_count - ($item_count-1);
+            $to = $page_number*$item_count;
+            $response=array();
+            $stats=array();
+            include 'dbconfig.php';
+            // Create connection
+            $conn = new mysqli($HostName, $HostUser, $HostPass, $DatabaseName);
+            $total = mysqli_num_rows(mysqli_query($conn, &amp;quot;SELECT id from db1&amp;quot;));
+            if($to&amp;gt;$total)
+            {
+            array_push($response,array('status'=&amp;gt;'end'));
+            echo json_encode($response);
+            }
+            else
+            {
+            array_push($response,array('status'=&amp;gt;'ok'));
+            $count = $from;
+            $images = array();
+            $start = ($page_number - 1) * $item_count;
+            //SQL query to fetch data of a range
+            $sql = &amp;quot;SELECT * from db1 limit $start, $item_count&amp;quot;;
+            //Getting result
+            $result = mysqli_query($conn,$sql);
+            //Adding results to an array
+            $data = array();
+            while($row = mysqli_fetch_array($result))
+            {
+            $data[] = $row;
+            array_push($images,$row );
+            $count = $count+1;
+            }
+            array_push($response,array('images'=&amp;gt;$images));
+            sleep(2);
+            header('Content-Type:Application/json');
+            echo json_encode($response);
+            }
+            ?&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;CURRENT OUTPUT (Note the Double echo for rows and column numbering)&lt;/p&gt;
+            &lt;pre&gt;[{"status":"ok"},{"images":
+            [{"0":"1","id":"1","1":"1","status":"1",
+            "2":"http:\/\/localhost\/uploadmultiple\/uploads\/21.png","image1URL":"http:\/\/localhost\/uploadmultiple\/uploads\/31765.png"},
+            {"0":"2","id":"2","1":null,"status":null,
+            "2":"http:\/\/localhost\/uploadmultiple\/uploads\/22.png","image1URL":"http:\/\/localhost\/uploadmultiple\/uploads\/43798.png"}]}]&lt;/pre&gt;
+            &lt;p&gt;EXPECTED OUTPUT&lt;/p&gt;
+            &lt;pre&gt;[{"status":"ok"},{"images":[{"id":"1","image1URL":"http:\/\/localhost\/uploadmultiple\/uploads\/21.png"},
+            {"id":"2","image1URL":"http:\/\/localhost\/uploadmultiple\/uploads\/22.png"}]}]&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941594</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Correct way of putting an SQL SELECT statement into a PHP variabe with another PHP variable as the WHERE</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <author>
+            <name>Denise Field</name>
+            <uri>https://stackoverflow.com/users/2665428</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941594/correct-way-of-putting-an-sql-select-statement-into-a-php-variabe-with-another-p"/>
+        <published>2020-07-16T18:46:58Z</published>
+        <updated>2020-07-16T18:46:58Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm trying to add in a PHP variable on a select statement&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;The SQL SELECT is
+
+            SELECT Nichename from niche INNER JOIN broker on broker.Niche_NicheID = niche.NicheID WHERE BrokerID= (another variable)
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;It works in PHPMYADMIN as a select when I enter the BrokerID, the correct Nichename shows up. Its a PHP page inside a Wordpress Site so I used this code&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$nichename = $wpdb-&amp;gt;get_results( 'SELECT Nichename from niche INNER JOIN broker on broker.Niche_NicheID = niche.NicheID WHERE BrokerID')==$broker_id;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;There is no output when I put this&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php echo  $nichename ?&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;It would like The Niche Name - e.g Travel Insurance but I get nothing.&lt;/p&gt;
+            &lt;p&gt;I've verified if I do an &lt;code&gt;&amp;lt;?php echo $broker_id ?&amp;gt;&lt;/code&gt;I get the correct BrokerID so I dont know what I am doing wrong.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941503</id>
+        <re:rank scheme="https://stackoverflow.com">-3</re:rank>
+        <title type="text">api for xiaomi mi smart sensor set [closed]</title>
+        <category scheme="https://stackoverflow.com/tags" term="python"/>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="api"/>
+        <category scheme="https://stackoverflow.com/tags" term="xiaomi"/>
+        <author>
+            <name>peter</name>
+            <uri>https://stackoverflow.com/users/1234137</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941503/api-for-xiaomi-mi-smart-sensor-set"/>
+        <published>2020-07-16T18:41:07Z</published>
+        <updated>2020-07-16T18:41:07Z</updated>
+        <summary type="html">
+            &lt;p&gt;Please, does any API for Xiaomi Mi Smart Sensor Set exist?
+            I just need to send request to gateway device, if it is live and armed. I prefer php/python/curl/or something similar.&lt;/p&gt;
+            &lt;p&gt;Any idea please?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941493</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How do i parse github markdown to php from url</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="github"/>
+        <category scheme="https://stackoverflow.com/tags" term="markdown"/>
+        <author>
+            <name>Dylan Weijgertze</name>
+            <uri>https://stackoverflow.com/users/10133074</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941493/how-do-i-parse-github-markdown-to-php-from-url"/>
+        <published>2020-07-16T18:40:07Z</published>
+        <updated>2020-07-16T18:40:07Z</updated>
+        <summary type="html">
+            &lt;p&gt;I can already parse a markdown file to html but my problem is getting that markdown file from a url instead of a local. Below is the code i have.&lt;/p&gt;
+            &lt;pre class="lang-php prettyprint-override"&gt;&lt;code&gt;&amp;lt;?php
+            include('./includes/Parsedown.php');
+            $Parsedown = new Parsedown();
+            $text = 'https://raw.githubusercontent.com/dylanwe/How-to-make-a-discord-bot/master/README.md';
+            $slug = 'How-to-make-a-discord-bot';
+            $text = str_replace('img', &amp;quot;https://raw.githubusercontent.com/dylanwe/$slug/master/img&amp;quot;, $text);
+            ?&amp;gt;
+            &amp;lt;!DOCTYPE html&amp;gt;
+            &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+            &amp;lt;head&amp;gt;
+            &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+            &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+            &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css&amp;quot;&amp;gt;
+            &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;css/prism_github.css&amp;quot;&amp;gt;
+            &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css&amp;quot;&amp;gt;
+            &amp;lt;style&amp;gt;
+            .markdown-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 15px;
+            }
+            pre[class*=language-]&amp;gt;code {
+            border: none;
+            box-shadow: none;
+            }
+            &amp;lt;/style&amp;gt;
+            &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+            &amp;lt;/head&amp;gt;
+            &amp;lt;body&amp;gt;
+            &amp;lt;div class=&amp;quot;markdown-body&amp;quot;&amp;gt;
+            &amp;lt;?php echo $Parsedown-&amp;gt;text($text); ?&amp;gt;
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+            &amp;lt;/body&amp;gt;
+            &amp;lt;/html&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941451</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Best way to store non-essential data in web development?</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel"/>
+        <author>
+            <name>Álvaro Pérez Díaz</name>
+            <uri>https://stackoverflow.com/users/12217393</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941451/best-way-to-store-non-essential-data-in-web-development"/>
+        <published>2020-07-16T18:37:11Z</published>
+        <updated>2020-07-16T18:37:11Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm making a form to register books, and one of the fields is book's genre. The user will be able to choose the genre with a select, but I have no idea what to use to 'fill' this select: a XML file, JSON. I pretend to avoid a column or table in database.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941290</id>
+        <re:rank scheme="https://stackoverflow.com">-2</re:rank>
+        <title type="text">How to print N-Dimensional array in PHP</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="html"/>
+        <category scheme="https://stackoverflow.com/tags" term="algorithm"/>
+        <category scheme="https://stackoverflow.com/tags" term="loops"/>
+        <category scheme="https://stackoverflow.com/tags" term="foreach"/>
+        <author>
+            <name>Ahmad Ameri</name>
+            <uri>https://stackoverflow.com/users/3105264</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941290/how-to-print-n-dimensional-array-in-php"/>
+        <published>2020-07-16T18:27:14Z</published>
+        <updated>2020-07-16T18:54:38Z</updated>
+        <summary type="html">
+            &lt;p&gt;How can I print an N-Dimensional array? (for 1-D array we can use 1 foreach loop, for 2-D array we can use 2 foreach loop, ... but what for N-D array?)
+            This is my array:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;Array
+            (
+            [1] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_1
+            )
+            [2] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_2
+            [children] =&amp;gt; Array
+            (
+            [34] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_34
+            )
+
+            [32] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_32
+            [children] =&amp;gt; Array
+            (
+            [35] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_35
+            [children] =&amp;gt; Array
+            (
+            [36] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_36
+            )
+            )
+            )
+            )
+            )
+            )
+            )
+            [3] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_3
+            [children] =&amp;gt; Array
+            (
+            [42] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_42
+            [children] =&amp;gt; Array
+            (
+            [43] =&amp;gt; Array
+            (
+            [name] =&amp;gt; name_43
+            )
+            )
+            )
+            )
+            )
+            )
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;I want to print it into HTML list. Something like this:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;name_1
+            &amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;name_2
+            &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;name_34
+            &amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;name_32
+            &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;35
+            &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;name36
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;name_3
+            &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;name_42
+            &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;name_43
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;How can it be done? It should be similar to algorithm of print_r() or var_dump()&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941278</id>
+        <re:rank scheme="https://stackoverflow.com">-1</re:rank>
+        <title type="text">How to send a HTTP request to be front of the line?</title>
+        <category scheme="https://stackoverflow.com/tags" term="javascript"/>
+        <category scheme="https://stackoverflow.com/tags" term="python"/>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="http"/>
+        <category scheme="https://stackoverflow.com/tags" term="https"/>
+        <author>
+            <name>user44</name>
+            <uri>https://stackoverflow.com/users/6401172</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941278/how-to-send-a-http-request-to-be-front-of-the-line"/>
+        <published>2020-07-16T18:26:03Z</published>
+        <updated>2020-07-16T18:26:03Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am trying to send request to a busy server flooded by user requests. The server is opened to accept requests at a specific time when many users are competing to obtain better places. It should be noted that the server work with kind of rate limit request API where the requests are accepted every 0.8 seconds for each user. Once the rate limit is violated, a 200 response with a message notifying 'limitation on requests per second' is recieved.
+            The works I have done:
+            -Trying to send Requests from different IP to see if multiple requests per second can be accepted.
+            -Trying with different login cookies, but for the same user.
+            -Using a delay(0.8 s) between requests.
+            But I have not been able to reach a good succes rate yet.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941266</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">PHP curl save cookies between requests</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="curl"/>
+        <author>
+            <name>Occult World</name>
+            <uri>https://stackoverflow.com/users/12385637</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941266/php-curl-save-cookies-between-requests"/>
+        <published>2020-07-16T18:25:22Z</published>
+        <updated>2020-07-16T18:25:22Z</updated>
+        <summary type="html">
+            &lt;p&gt;so I am having trouble with CURL because it's not saving cookies inbetween two requests. So this is what I'm trying to do, it's printing out the cookies however I'm not sure how to convert it from an array to a string. This is the cookies dump: &lt;code&gt;array(3) { [&amp;quot;XSRF-TOKEN&amp;quot;]=&amp;gt; string(244) &amp;quot;eyJpdiI6IjFnbzA3d0g3ZmZOdVVXR2F5czVqeHc9PSIsInZhbHVlIjoiK1FuNnRHVVkyTWsrSUNkMmhZQkJNNWxHb3pBT0RsU1JsT0V4eUJjVFp3ZVNmQ2tCcmN1eEJnMk9xdG5Id3Y2USIsIm1hYyI6IjQ2MWFjODQ4NWE3ZTIzYzg5MDM0YjFjMzkwYzhmMDc2MDQwMTE5OGM3NzBmMjcwNjUxMzlhMzY5NGE5M2RhMDYifQ==&amp;quot; [&amp;quot;laravel_session&amp;quot;]=&amp;gt; string(244) &amp;quot;eyJpdiI6IjRqQTEzdmxuRDN0N3orMEZXTmlXOFE9PSIsInZhbHVlIjoicXZYdUpkWG95czFSTC84YUo5U0hrYm1jTWNLdzh5eWNWU2E1QW9tUFpNQkdJeW04NWR2NjN6NkRQMk10NldYTCIsIm1hYyI6ImZhNjE4MzhlNzhhZGE4MzhjZjY1YWY2YTYxNDIyMDk1YjUwMmJlN2IxMzMzYWFlNGYzM2EwMzQ5MTM1ODFmOTkifQ==&amp;quot; [&amp;quot;HBAOahHAdU2IZQ0QPIvkISsi0U894rAXLboPhJWM&amp;quot;]=&amp;gt; string(584) &amp;quot;eyJpdiI6ImxZNVBwMitOT2VCaTV4bC9tOWNMRFE9PSIsInZhbHVlIjoiTkhIMDZBMjhoUkdod094SVpZWGRMMTVhWStyaE5NWW9jcituNFVsNFlKSkh1VS92cDF6VFd5eUpUWHdObTlWVjJmUFgwQlRyaUh1MGtpdWtOVmxYYWVRMCtRa1ZRdGl4a3pEU0NMQmRCS2lwQzRlMGx3SjZacTF0Rm1Ua2hNcFc2bGNQeXFFZ3drdGJtN21yNnJUZVhmTUc1aTZwdFpOT3QwS0tTSVZqTUFtTFo1d2pVTEF1QnBLYzV4ZTY3RWJJUG5wRjNLbTlTL2dzd245a1kvNWN2b3YxR0JXTTQ5ZkJ6UVVqcGs2UE9UZUJ4Nk1rN0Rpc1FmV3JoUFp0cVpsV0E0YTc5a0NLQ1FWWnhpd05WeXVvZEQxQ0JUSWNBQ3dsK1hCYjVMWTdSU0N5UzJ4UWg0dlVWTnI4TjJYOEtMdVoiLCJtYWMiOiJlZjk1ZDRjZmRlMWU4ZmIzNWQ0ODUzZmUwMjY0MGI0YTg2Y2NiNTE4ZjJiZDgwYjYyYTFlYWY4OTk3YTJhMjI4In0=&amp;quot; }&lt;/code&gt;&lt;/p&gt;
+            &lt;p&gt;And my script:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php
+            //$number = $_GET['number'];
+            function getUrl($url)
+            {
+            $ch = curl_init();
+            $timeout = 7; // set to zero for no timeout
+            curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+            curl_setopt ($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+            //curl_setopt($ch, CURLOPT_PROXY, &amp;quot;http://190.25.47.86&amp;quot;); //your proxy url
+            //curl_setopt($ch, CURLOPT_PROXYPORT, &amp;quot;8080&amp;quot;); // your proxy port number
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_HEADER, true);
+            $file_contents = curl_exec($ch);
+            preg_match_all('/^Set-Cookie:\s*([^;]*)/mi', $file_contents, $matches);
+            $cookies = array();
+            foreach($matches[1] as $item) {
+            parse_str($item, $cookie);
+            $cookies = array_merge($cookies, $cookie);
+            }
+            var_dump($cookies);
+            $dom = new DOMDocument();
+            @$dom-&amp;gt;loadHTML($file_contents);
+
+            $token = null;
+
+            foreach($dom-&amp;gt;getElementsByTagName('input') as $input) {
+            if ($input-&amp;gt;getAttribute('name') == '_token') {
+            $token = $input-&amp;gt;getAttribute('value');
+            break;
+            }
+            }
+
+            if($token != null) {
+            curl_setopt($ch, CURLOPT_COOKIE, $matches);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, &amp;quot;_token={$token}&amp;amp;search=test&amp;quot;);
+            curl_setopt ($ch, CURLOPT_URL,$url.'/lookup');
+            $file_contents = curl_exec($ch);
+            }
+            curl_close($ch);
+
+            return $file_contents;
+            }
+            $response = getUrl(&amp;quot;https://example.com&amp;quot;);
+            echo $response;
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941220</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How to check if element exists in database and return a warning message? PHP, MySql</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <category scheme="https://stackoverflow.com/tags" term="sql"/>
+        <category scheme="https://stackoverflow.com/tags" term="sql-insert"/>
+        <author>
+            <name>dontdownvoteme</name>
+            <uri>https://stackoverflow.com/users/13938589</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941220/how-to-check-if-element-exists-in-database-and-return-a-warning-message-php-my"/>
+        <published>2020-07-16T18:22:57Z</published>
+        <updated>2020-07-16T18:22:57Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have a case where I am importing a spreadsheet of items, and when inserting I need to check for each item if already exists (either by serial_no or serial_imei) and then for each that EXISTS I need to inform the user when the submission is done with a message such as: &amp;quot;Item with serial no 123456 was already found in database&amp;quot;.&lt;/p&gt;
+            &lt;p&gt;Here is the way I am inserting:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;  ...
+
+            $stmt = $db-&amp;gt;prepare(&amp;quot;INSERT INTO devices (serial_imei,serial_no) VALUES (?,?)&amp;quot;);
+            for ($i = 0; $i &amp;lt; $min; $i++) {
+            $stmt-&amp;gt;bind_param(&amp;quot;ii&amp;quot;, $imei[$keysTwo[$i]], $serial_no[$keysOne[$i]]);
+            $stmt-&amp;gt;execute();
+            }
+
+            ...
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;&lt;strong&gt;I saw somewhere that I can use INSERT IGNORE but how can I do that inside loop and return a warning message for each item that has been found?&lt;/strong&gt;&lt;/p&gt;
+            &lt;p&gt;I am new to SQL so this might be an easy thing to you guys but not to me. Thanks!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941141</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Pick a random item from an array and pass it to a hidden field in gravity forms</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="wordpress"/>
+        <category scheme="https://stackoverflow.com/tags" term="gravity"/>
+        <category scheme="https://stackoverflow.com/tags" term="gravityforms"/>
+        <author>
+            <name>gunbalde06</name>
+            <uri>https://stackoverflow.com/users/2262408</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941141/pick-a-random-item-from-an-array-and-pass-it-to-a-hidden-field-in-gravity-forms"/>
+        <published>2020-07-16T18:18:09Z</published>
+        <updated>2020-07-16T18:18:09Z</updated>
+        <summary type="html">
+            &lt;pre&gt;&lt;code&gt;
+            add_filter( 'gform_pre_render_6', 'populate_posts' );
+            add_filter( 'gform_pre_validation_6', 'populate_posts' );
+            add_filter( 'gform_pre_submission_6', 'populate_posts' );
+            add_filter( 'gform_admin_pre_render_6', 'populate_posts' );
+            function populate_posts( $form ) {
+
+            $metavalue = $_POST[&amp;quot;input_4&amp;quot;];//store the value of the dropdown.
+
+            foreach ( $form['fields'] as &amp;amp;$field ) {
+
+            if ( $field-&amp;gt;type != 'select' || strpos( $field-&amp;gt;cssClass, 'populate-posts' ) === false ) {
+            continue;
+            }
+
+            $args = array(
+            'numberposts' =&amp;gt; -1,
+            'post_type' =&amp;gt; 'member',
+            'post_status' =&amp;gt; 'publish',
+            'meta_query' =&amp;gt; array(
+            'relation' =&amp;gt; 'OR',
+            array(
+            'key' =&amp;gt; 'assets',
+            'value' =&amp;gt; $metavalue,
+            'compare' =&amp;gt; 'LIKE'
+            ))
+
+
+            );
+
+
+            //create array based on selection
+            $posts = get_posts( $args );
+
+            $choices = array();
+
+            foreach ( $posts as $post ) {
+            $choices[] = array( 'text' =&amp;gt; $post-&amp;gt;post_title, 'value' =&amp;gt; $post-&amp;gt;post_title );
+            }
+
+            // update 'Select a Post' to whatever you'd like the instructive option to be
+            $field-&amp;gt;placeholder = 'Select a Post';
+            $field-&amp;gt;choices = $choices;
+
+            }
+
+            return $form;
+            }
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;Hi guys,&lt;/p&gt;
+            &lt;p&gt;The purpose of this code is to select from a dropdown which corresponds to a Custom Field, based on the selection, it will then generate a query which based on the metavalue and then put the posts in an array. I was able to store them in an array but I wish to pass a random value from that array to another hidden field in the same form. Is there a more efficient way of doing this particular code?&lt;/p&gt;
+            &lt;p&gt;Thank you so much&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941039</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Woocommerce mini cart isn't working on product page</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="html"/>
+        <category scheme="https://stackoverflow.com/tags" term="wordpress"/>
+        <category scheme="https://stackoverflow.com/tags" term="woocommerce"/>
+        <category scheme="https://stackoverflow.com/tags" term="wordpress-theming"/>
+        <author>
+            <name>Max</name>
+            <uri>https://stackoverflow.com/users/12819179</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941039/woocommerce-mini-cart-isnt-working-on-product-page"/>
+        <published>2020-07-16T18:11:25Z</published>
+        <updated>2020-07-16T18:11:25Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm having a problem with my mini-cart. It works on all pages, with ajax to reload it dynamically except for the product pages.&lt;/p&gt;
+            &lt;p&gt;If I add an item to the cart on the product page, I have to reload the page to get a reaction and my content disappears completely except for the header. I also can't open the modal of the mini-cart.&lt;/p&gt;
+            &lt;p&gt;I don't know what I'm missing...&lt;/p&gt;
+            &lt;p&gt;Here is my code:&lt;/p&gt;
+            &lt;p&gt;functions.php&lt;/p&gt;
+            &lt;p&gt;&lt;div class="snippet" data-lang="js" data-hide="false" data-console="true" data-babel="false"&gt;&#13;
+            &lt;div class="snippet-code"&gt;&#13;
+            &lt;pre class="snippet-code-html lang-html prettyprint-override"&gt;&lt;code&gt;&amp;lt;?php
+
+            function mytheme_files() {
+            wp_enqueue_style('mytheme_main_styles', get_stylesheet_uri());
+            wp_enqueue_style('mytheme_mini_cart', get_template_directory_uri(). '/assets/css/minicart.css');
+            wp_enqueue_script('miniCart', get_template_directory_uri(). '/assets/js/minicart.js', array(), false, true);
+            wp_enqueue_script('formPlaceholder', get_template_directory_uri(). '/assets/js/formplaceholder.js', array(), false, true);
+            }
+            add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+            function ajax_update_mini_cart() {
+            echo wc_get_template ('cart/mini-cart.php');
+            die();
+            }
+            add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+
+            function woocommerce_header_add_to_cart_fragment( $fragments ) {
+            global $woocommerce;
+            $count = $woocommerce-&amp;gt;cart-&amp;gt;cart_contents_count;
+            if($count &amp;gt; 0){
+            ob_start();
+
+            ?&amp;gt;
+            &amp;lt;span class="cart-count"&amp;gt;&amp;lt;?php echo $count ?&amp;gt;&amp;lt;/span&amp;gt;
+            &amp;lt;?php
+
+            $fragments['span.cart-count'] = ob_get_clean();
+
+            return $fragments;
+            }
+            }
+            add_filter( 'wp_ajax_nopriv_update_mini_cart', 'ajax_update_mini_cart' );
+            add_filter( 'wp_ajax_ajax_update_mini_cart', 'ajax_update_mini_cart' );
+            add_action( 'wp_enqueue_scripts', 'mytheme_files');
+
+            function mytheme_add_woocommerce_support() {
+            add_theme_support( 'woocommerce' );
+            }
+
+            add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+            add_action('template_redirect', 'remove_shop_breadcrumbs' );
+            function remove_shop_breadcrumbs(){
+
+            if (is_shop())
+            remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+
+            }
+            ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/p&gt;
+            &lt;p&gt;my header.php&lt;/p&gt;
+            &lt;p&gt;&lt;div class="snippet" data-lang="js" data-hide="false" data-console="true" data-babel="false"&gt;&#13;
+            &lt;div class="snippet-code"&gt;&#13;
+            &lt;pre class="snippet-code-html lang-html prettyprint-override"&gt;&lt;code&gt;&amp;lt;! DOCTYPE html&amp;gt;
+            &amp;lt;html&amp;gt;
+            &amp;lt;head&amp;gt;
+            &amp;lt;?php wp_head(); ?&amp;gt;
+            &amp;lt;/head&amp;gt;
+
+            &amp;lt;body&amp;gt;
+
+            &amp;lt;header&amp;gt;
+            &amp;lt;div class="navbar"&amp;gt;
+            &amp;lt;div class="navbar_boxed"&amp;gt;
+            &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;a href="/"&amp;gt;Accueil&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;a href="/a-propos"&amp;gt;À propos&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;a href="/boutique"&amp;gt;Boutique&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;
+            &amp;lt;select&amp;gt;
+            &amp;lt;option&amp;gt;Fr&amp;lt;/option&amp;gt;
+            &amp;lt;option&amp;gt;En&amp;lt;/option&amp;gt;
+            &amp;lt;/select&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+            &amp;lt;svg id="logo" xmlns="http://www.w3.org/2000/svg" width="130" height="96" viewBox="0 0 130 96"&amp;gt;
+            &amp;lt;/svg&amp;gt;
+            &amp;lt;div&amp;gt;
+            &amp;lt;form role="search" method="get"&amp;gt;
+            &amp;lt;label class="screen-reader-text" for="s"&amp;gt;&amp;lt;/label&amp;gt;
+            &amp;lt;input type="search" class="search-field" placeholder="Rechercher" value="" name="s" title="" /&amp;gt;
+            &amp;lt;input type="submit" value="" /&amp;gt;
+            &amp;lt;input type="hidden" name="post_type" value="product" /&amp;gt;
+            &amp;lt;/form&amp;gt;
+            &amp;lt;button class="cart_button"&amp;gt;&amp;lt;span class="cart-count yellow-count"&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+            &amp;lt;?php if ( is_user_logged_in() ) {
+            ?&amp;gt;&amp;lt;a href="/mon-compte/"&amp;gt;Mon compte&amp;lt;/a&amp;gt;&amp;lt;?php
+            } else {
+            ?&amp;gt;&amp;lt;a href="/connexion"&amp;gt;Connexion&amp;lt;/a&amp;gt;&amp;lt;?php
+            } ?&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class="mini_cart_handler"&amp;gt;
+            &amp;lt;div class="mini_cart_title"&amp;gt;
+            &amp;lt;p&amp;gt;Votre Panier&amp;lt;/p&amp;gt;
+            &amp;lt;button class="cart_close_button"&amp;gt;&amp;lt;span class="cart-count green-count"&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;div class="widget_shopping_cart_content"&amp;gt;
+            &amp;lt;?php woocommerce_mini_cart(); ?&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div&amp;gt;
+
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/header&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/p&gt;
+            &lt;p&gt;&lt;div class="snippet" data-lang="js" data-hide="false" data-console="true" data-babel="false"&gt;&#13;
+            &lt;div class="snippet-code"&gt;&#13;
+            &lt;pre class="snippet-code-html lang-html prettyprint-override"&gt;&lt;code&gt;&amp;lt;?php
+            defined( 'ABSPATH' ) || exit;
+
+            do_action( 'woocommerce_before_mini_cart' ); ?&amp;gt;
+
+            &amp;lt;?php if ( ! WC()-&amp;gt;cart-&amp;gt;is_empty() ) : ?&amp;gt;
+
+            &amp;lt;ul class="woocommerce-mini-cart cart_list product_list_widget &amp;lt;?php echo esc_attr( $args['list_class'] ); ?&amp;gt;"&amp;gt;
+            &amp;lt;?php
+            do_action( 'woocommerce_before_mini_cart_contents' );
+
+            foreach ( WC()-&amp;gt;cart-&amp;gt;get_cart() as $cart_item_key =&amp;gt; $cart_item ) {
+            $_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+            $product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+
+            if ( $_product &amp;amp;&amp;amp; $_product-&amp;gt;exists() &amp;amp;&amp;amp; $cart_item['quantity'] &amp;gt; 0 &amp;amp;&amp;amp; apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+            $product_name      = apply_filters( 'woocommerce_cart_item_name', $_product-&amp;gt;get_name(), $cart_item, $cart_item_key );
+            $thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product-&amp;gt;get_image(), $cart_item, $cart_item_key );
+            $product_price     = apply_filters( 'woocommerce_cart_item_price', WC()-&amp;gt;cart-&amp;gt;get_product_price( $_product ), $cart_item, $cart_item_key );
+            $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product-&amp;gt;is_visible() ? $_product-&amp;gt;get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+            ?&amp;gt;
+            &amp;lt;li class="woocommerce-mini-cart-item &amp;lt;?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?&amp;gt;"&amp;gt;
+            &amp;lt;?php
+            echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            'woocommerce_cart_item_remove_link',
+            sprintf(
+            '&amp;lt;a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"&amp;gt;&amp;amp;times;&amp;lt;/a&amp;gt;',
+            esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+            esc_attr__( 'Remove this item', 'woocommerce' ),
+            esc_attr( $product_id ),
+            esc_attr( $cart_item_key ),
+            esc_attr( $_product-&amp;gt;get_sku() )
+            ),
+            $cart_item_key
+            );
+            ?&amp;gt;
+            &amp;lt;?php if ( empty( $product_permalink ) ) : ?&amp;gt;
+            &amp;lt;?php echo $thumbnail . $product_name; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&amp;gt;
+            &amp;lt;?php else : ?&amp;gt;
+            &amp;lt;a href="&amp;lt;?php echo esc_url( $product_permalink ); ?&amp;gt;"&amp;gt;
+            &amp;lt;?php echo $thumbnail . $product_name; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&amp;gt;
+            &amp;lt;/a&amp;gt;
+            &amp;lt;?php endif; ?&amp;gt;
+            &amp;lt;?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&amp;gt;
+            &amp;lt;?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '&amp;lt;span class="quantity"&amp;gt;' . sprintf( '%s &amp;amp;times; %s', $cart_item['quantity'], $product_price ) . '&amp;lt;/span&amp;gt;', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;?php
+            }
+            }
+
+            do_action( 'woocommerce_mini_cart_contents' );
+            ?&amp;gt;
+            &amp;lt;/ul&amp;gt;
+
+            &amp;lt;p class="woocommerce-mini-cart__total total"&amp;gt;
+            &amp;lt;?php
+            /**
+            * Hook: woocommerce_widget_shopping_cart_total.
+            *
+            * @hooked woocommerce_widget_shopping_cart_subtotal - 10
+            */
+            do_action( 'woocommerce_widget_shopping_cart_total' );
+            ?&amp;gt;
+            &amp;lt;/p&amp;gt;
+
+            &amp;lt;?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?&amp;gt;
+
+            &amp;lt;p class="woocommerce-mini-cart__buttons buttons"&amp;gt;&amp;lt;?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?&amp;gt;&amp;lt;/p&amp;gt;
+
+            &amp;lt;?php do_action( 'woocommerce_widget_shopping_cart_after_buttons' ); ?&amp;gt;
+
+            &amp;lt;?php else : ?&amp;gt;
+
+            &amp;lt;p class="woocommerce-mini-cart__empty-message"&amp;gt;&amp;lt;?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?&amp;gt;&amp;lt;/p&amp;gt;
+
+            &amp;lt;?php endif; ?&amp;gt;
+
+            &amp;lt;?php do_action( 'woocommerce_after_mini_cart' ); ?&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/p&gt;
+            &lt;p&gt;my single-product.php&lt;/p&gt;
+            &lt;p&gt;&lt;div class="snippet" data-lang="js" data-hide="false" data-console="true" data-babel="false"&gt;&#13;
+            &lt;div class="snippet-code"&gt;&#13;
+            &lt;pre class="snippet-code-html lang-html prettyprint-override"&gt;&lt;code&gt;&amp;lt;?php
+            /**
+            * The Template for displaying all single products
+            *
+            * This template can be overridden by copying it to yourtheme/woocommerce/single-product.php.
+            *
+            * HOWEVER, on occasion WooCommerce will need to update template files and you
+            * (the theme developer) will need to copy the new files to your theme to
+            * maintain compatibility. We try to do this as little as possible, but it does
+            * happen. When this occurs the version of the template file will be bumped and
+            * the readme will list any important changes.
+            *
+            * @see         https://docs.woocommerce.com/document/template-structure/
+            * @package     WooCommerce/Templates
+            * @version     1.6.4
+            */
+
+            if ( ! defined( 'ABSPATH' ) ) {
+            exit; // Exit if accessed directly
+            }
+
+            get_header('shop'); ?&amp;gt;
+            &amp;lt;div class="shop_background"&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;?php
+            /**
+            * woocommerce_before_main_content hook.
+            *
+            * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+            * @hooked woocommerce_breadcrumb - 20
+            */
+            do_action( 'woocommerce_before_main_content' );
+            ?&amp;gt;
+
+
+
+            &amp;lt;?php while ( have_posts() ) : ?&amp;gt;
+            &amp;lt;div class="product_page_container"&amp;gt;
+            &amp;lt;?php the_post(); ?&amp;gt;
+
+            &amp;lt;?php wc_get_template_part( 'content', 'single-product' ); ?&amp;gt;
+
+            &amp;lt;?php endwhile; // end of the loop. ?&amp;gt;
+
+            &amp;lt;?php
+            /**
+            * woocommerce_after_main_content hook.
+            *
+            * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+            */
+            do_action( 'woocommerce_after_main_content' );
+            ?&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;?php
+            get_footer('shop');
+            /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */&lt;/code&gt;&lt;/pre&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://i.stack.imgur.com/cHBaX.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/cHBaX.png" alt="On every page it's working" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://i.stack.imgur.com/vdrXt.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/vdrXt.png" alt="On every page it's working 2" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://i.stack.imgur.com/xhSfv.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/xhSfv.png" alt="Except on single product page, admin bar gone and modal won't appear in html :/" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Thanks&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941036</id>
+        <re:rank scheme="https://stackoverflow.com">1</re:rank>
+        <title type="text">Laravel 7 - created_at shows wrong datetime in datatable</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel-7"/>
+        <author>
+            <name>Marek Kaliszuk</name>
+            <uri>https://stackoverflow.com/users/2665491</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941036/laravel-7-created-at-shows-wrong-datetime-in-datatable"/>
+        <published>2020-07-16T18:11:08Z</published>
+        <updated>2020-07-16T18:30:05Z</updated>
+        <summary type="html">
+            &lt;p&gt;in database I have stored date in field created_at for storage logs. Problem is that &lt;strong&gt;date in database is different&lt;/strong&gt; from displayed in datatable.&lt;/p&gt;
+            &lt;p&gt;Here is a screenshot from database row:
+            &lt;a href="https://i.stack.imgur.com/3lu67.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/3lu67.png" alt="enter image description here" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;And result in displayed datatable:
+            &lt;a href="https://i.stack.imgur.com/H55dT.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/H55dT.png" alt="enter image description here" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Timezone in database looks correct for Poland +2H:&lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://i.stack.imgur.com/ZQcPN.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/ZQcPN.png" alt="enter image description here" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Also every new content added to database shows correct date. Timezone in Laravel is set to Europe/Warsaw which is correct. Date format is casted in logs model to prefered format:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;class StorageLog extends Model
+            {
+            protected $table = &amp;quot;storage_logs&amp;quot;;
+            public $timestamps = true;
+
+            protected $casts = [
+            'created_at' =&amp;gt; 'datetime:Y-m-d H:i:s',
+            ];
+            }
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;Here is a code that calls database and returns data:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt; $logs = StorageLog::select('id', 'id_storage_product', 'id_user', 'log', 'created_at')
+            $result = $logs-&amp;gt;orderBy('id', 'DESC')-&amp;gt;paginate(20, ['*'], 'page', 1);
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;Result using DD function:
+            &lt;a href="https://i.stack.imgur.com/Uw1VG.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/Uw1VG.png" alt="enter image description here" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Many thanks for any help with problem.
+            Have a nice day!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941031</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">php session variable is not updating in jquery</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="jquery"/>
+        <category scheme="https://stackoverflow.com/tags" term="mouseevent"/>
+        <category scheme="https://stackoverflow.com/tags" term="session-variables"/>
+        <author>
+            <name>akash yadav</name>
+            <uri>https://stackoverflow.com/users/4823392</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941031/php-session-variable-is-not-updating-in-jquery"/>
+        <published>2020-07-16T18:10:59Z</published>
+        <updated>2020-07-16T18:10:59Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am trying to update php SESSION variable in jquery mouse event but it is not updating.
+            My jquery function is as follows:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$(document).mousemove(function(e){
+            &amp;lt;?php $_SESSION['last_activity_time'] = time(); ?&amp;gt;
+            alert('&amp;lt;?php echo date(&amp;quot;H:i:s&amp;quot;, $_SESSION['last_activity_time']); ?&amp;gt;')
+            });
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;I even used time() function in alert box to check and even with that every time I move the mouse i got the same time. The mousemove function is working since every time i moved it a alerbox shows. But every time the time is same. I don't know what I am doing wrong here...&lt;/p&gt;
+            &lt;p&gt;In some post I found that I can use ajax for updating the session variable. But in that process , what i know(not an expert in ajax) is that the ajax call will goto other page and after performing desired function it return to the current page and I dont want to redirect to soem other php page. I want to update this session variable without moving to other page.&lt;/p&gt;
+            &lt;p&gt;Kindly point out what i am doing wrong in above function and how i can solve this problem.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62941024</id>
+        <re:rank scheme="https://stackoverflow.com">-1</re:rank>
+        <title type="text">How to allow users change data in txt file PHP</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="html"/>
+        <author>
+            <name>D3lta Nuub</name>
+            <uri>https://stackoverflow.com/users/12816407</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62941024/how-to-allow-users-change-data-in-txt-file-php"/>
+        <published>2020-07-16T18:10:48Z</published>
+        <updated>2020-07-16T18:10:48Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm new to PHP and I've tried other examples of my code but none of them worked and I don't know what I'm doing wrong. I do know how to get the data from txt file but I can't write in it using PHP. I want to allow users to change data in the txt file. Here is my code:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&amp;lt;?php
+            session_start();
+
+            $db = mysqli_connect('localhost', 'test', '', 'testu');
+
+            ?&amp;gt;
+            &amp;lt;script src=&amp;quot;scripts/sweetalert2.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+            &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;scripts/sweetalert3.css&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+
+            &amp;lt;div class=&amp;quot;panel-body text-center&amp;quot;&amp;gt;
+            &amp;lt;?php $fetchQuery = mysqli_query($db, &amp;quot;SELECT * FROM `users`&amp;quot;) or die(&amp;quot;could not fetch&amp;quot;.mysqli_error()); ?&amp;gt;
+            &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+            &amp;lt;table class=&amp;quot;table&amp;quot;&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;th&amp;gt;Id&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Username&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Email&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Level&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Key&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Credits&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Created&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Select&amp;lt;/th&amp;gt;
+            &amp;lt;th&amp;gt;Edit&amp;lt;/th&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;?php
+            while($row = mysqli_fetch_array($fetchQuery)) {
+            $credits = file_get_contents(&amp;quot;users/&amp;quot; . $row['name'] . &amp;quot;.txt&amp;quot;);
+            if(isset($_POST['submitEditBtn'])) {
+            $data_to_write = $_POST['update'];
+            $handle = fopen($credits, &amp;quot;w&amp;quot;);
+            fwrite($handle, $data_to_write);
+            fclose($handle);
+            }
+            ?&amp;gt;
+            &amp;lt;tr&amp;gt;
+            &amp;lt;form action=&amp;quot;&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row['user_id'];?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row['name'];?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row['email'];?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row['level'];?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row['key_asc'];?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;
+            &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;credits&amp;quot; class=&amp;quot;btn btn-dark&amp;quot; placeholder=&amp;quot;&amp;lt;?php echo $credits?&amp;gt;&amp;quot;/&amp;gt;
+            &amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;&amp;lt;?php echo $row['created'];?&amp;gt;&amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;
+            &amp;lt;input type=&amp;quot;checkbox&amp;quot; name=&amp;quot;update&amp;quot; value=&amp;quot;&amp;lt;?php echo $row['user_id'];?&amp;gt;&amp;quot; required/&amp;gt;
+            &amp;lt;/td&amp;gt;
+            &amp;lt;td&amp;gt;
+            &amp;lt;input type=&amp;quot;submit&amp;quot; name=&amp;quot;submitEditBtn&amp;quot; class=&amp;quot;btn btn-info&amp;quot;/&amp;gt;
+            &amp;lt;/td&amp;gt;
+            &amp;lt;/form&amp;gt;
+            &amp;lt;/tr&amp;gt;
+            &amp;lt;?php } ?&amp;gt;
+            &amp;lt;/table&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;?php require_once 'templates/footer.php'; ?&amp;gt; ```
+
+
+
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940966</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">PHP array loop for in foreach</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="arrays"/>
+        <category scheme="https://stackoverflow.com/tags" term="foreach"/>
+        <author>
+            <name>aha009</name>
+            <uri>https://stackoverflow.com/users/13565898</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940966/php-array-loop-for-in-foreach"/>
+        <published>2020-07-16T18:07:29Z</published>
+        <updated>2020-07-16T18:28:57Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have some array to go through foreach. Inside, I need to generate an array of quantity.&lt;/p&gt;
+            &lt;p&gt;It still brings me back in both 0-5.&lt;/p&gt;
+            &lt;p&gt;The output should look like this:&lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://i.stack.imgur.com/gmvOd.png" rel="nofollow noreferrer"&gt;&lt;img src="https://i.stack.imgur.com/gmvOd.png" alt="Output" /&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$a = array(['id' =&amp;gt; 1,'quantity' =&amp;gt; 5,'input' =&amp;gt; 'one'],
+            ['id' =&amp;gt; 2,'quantity' =&amp;gt; 4,'input' =&amp;gt; 'two'] );
+            foreach ($a as $b) {
+            for ($x = 0; $x &amp;lt;= $b['quantity']; $x++) {
+            $count[$x] = $x;
+            }
+            dump($b['quantity']);
+            dump($count);
+            }
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940951</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Recently viewed Products for Database in woocommerce</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <category scheme="https://stackoverflow.com/tags" term="wordpress"/>
+        <category scheme="https://stackoverflow.com/tags" term="woocommerce"/>
+        <author>
+            <name>Mark Palomino </name>
+            <uri>https://stackoverflow.com/users/13931625</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940951/recently-viewed-products-for-database-in-woocommerce"/>
+        <published>2020-07-16T18:06:38Z</published>
+        <updated>2020-07-16T18:06:38Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am practicing on a wordpress woocommerce project and inserted a php function to show recently viewed products through a shortcode using cookies. It works fine locally, now what I want to do is link this cookie or values ​​to a user. In other words, when I log in, it will show me the products I saw previously on my laptop, cell phone or other device (should it be saved in a database?). The code is the following:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
+            extract(shortcode_atts(array(&amp;quot;per_page&amp;quot; =&amp;gt; '4'), $atts));
+            global $woocommerce;
+            $viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] ) : array();
+            $viewed_products = array_filter( array_map( 'absint', $viewed_products ) );
+            if ( empty( $viewed_products ) )
+            return __( '', 'rc_wc_rvp' );
+            ob_start();
+            if( !isset( $per_page ) ? $number = 4 : $number = $per_page )
+            $query_args = array(
+            'posts_per_page' =&amp;gt; -1,
+            'no_found_rows'  =&amp;gt; 1,
+            'post_status'    =&amp;gt; 'publish',
+            'post_type'      =&amp;gt; 'product',
+            'post__in'       =&amp;gt; $viewed_products,
+            'orderby'        =&amp;gt; 'post__in'
+            );
+            $query_args['meta_query'] = array();
+            $query_args['meta_query'][] = $woocommerce-&amp;gt;query-&amp;gt;stock_status_meta_query();
+            $r = new WP_Query($query_args);
+            if ( $r-&amp;gt;have_posts() ) {
+            // Start the loop
+            while ( $r-&amp;gt;have_posts()) {
+            $r-&amp;gt;the_post();
+            $content .= wc_get_template_part( 'content', 'product' );
+
+            }
+            }
+            $content .= ob_get_clean();
+            return $content;
+            }
+
+            add_shortcode(&amp;quot;woocommerce_recently_viewed_products&amp;quot;,&amp;quot;rc_woocommerce_recently_viewed_products&amp;quot;);
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;and the function to enable the cookie in the course of my visits to the products&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;function wc_track_product_view_always() {
+            if ( ! is_singular( 'product' ) /* hello: remove this condition to run: || ! is_active_widget( false, false, 'woocommerce_recently_viewed_products', true )*/ ) {
+            return;
+            }
+
+            global $post;
+
+            if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) ) {
+            $viewed_products = array();
+            } else {
+            $viewed_products = wp_parse_id_list( (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) );
+            }
+
+            $keys = array_flip( $viewed_products );
+
+            if ( isset( $keys[ $post-&amp;gt;ID ] ) ) {
+            unset( $viewed_products[ $keys[ $post-&amp;gt;ID ] ] );
+            }
+
+            $viewed_products[] = $post-&amp;gt;ID;
+
+            if ( count( $viewed_products ) &amp;gt; 15 ) {
+            array_shift( $viewed_products );
+            }
+            wc_setcookie( 'woocommerce_recently_viewed', implode( '|', $viewed_products ) );
+            }
+
+            remove_action('template_redirect', 'wc_track_product_view', 20);
+            add_action( 'template_redirect', 'wc_track_product_view_always', 20 );
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;I repeat that locally it works perfectly. Now I want to adapt it by user (regardless of the navigation device), which would be saving it in the wordpress database. But I don't know how to make this adaptation. If you could help me please.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940948</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Is there some kind of performance (or other) punishment for using session_start() but not really using the session super-array?</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="performance"/>
+        <category scheme="https://stackoverflow.com/tags" term="session"/>
+        <author>
+            <name>user13908603</name>
+            <uri>https://stackoverflow.com/users/13908603</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940948/is-there-some-kind-of-performance-or-other-punishment-for-using-session-start"/>
+        <published>2020-07-16T18:06:31Z</published>
+        <updated>2020-07-16T18:06:31Z</updated>
+        <summary type="html">
+            &lt;p&gt;I've always wondered why PHP makes you manually &lt;code&gt;session_start()&lt;/code&gt; in order to gain access to the immensely useful &lt;code&gt;$_SESSION&lt;/code&gt; &amp;quot;super-array&amp;quot;.&lt;/p&gt;
+            &lt;p&gt;It strikes me that this might be causing a lot of stress on the server, but not really make a difference in practice unless you have an extreme amount of users.&lt;/p&gt;
+            &lt;p&gt;I don't really see why it would cause such a strain, though, if you don't use that array/mechanism. And if you do, you always want &lt;code&gt;session_start()&lt;/code&gt; to have been called... It would really be nice to finally get this straightened out.&lt;/p&gt;
+            &lt;p&gt;The manual doesn't offer any explanation: &lt;a href="https://www.php.net/session_start" rel="nofollow noreferrer"&gt;https://www.php.net/session_start&lt;/a&gt;&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940945</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">password_verify is not working in PHP 7.4.8</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="codeigniter-4"/>
+        <author>
+            <name>Shintoj Joseph</name>
+            <uri>https://stackoverflow.com/users/11073813</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940945/password-verify-is-not-working-in-php-7-4-8"/>
+        <published>2020-07-16T18:06:25Z</published>
+        <updated>2020-07-16T18:06:25Z</updated>
+        <summary type="html">
+            &lt;p&gt;Code Igniter 4 and PHP 7.4.8 is using
+            password_verify is not working in PHP 7.4.8 ..&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;   $email=$this-&amp;gt;request-&amp;gt;getVar('email');
+
+            $password = $this-&amp;gt;request-&amp;gt;getVar('password');
+
+            $user=$userLogin-&amp;gt;where('email',$this-&amp;gt;request-&amp;gt;getVar('email'))
+
+            -&amp;gt;first();
+            $this-&amp;gt;setUser($user);
+            if (password_verify($password, $user['password_salt'])) {
+            echo 'Valid password';}
+
+            else {
+
+            echo 'Invalid password. ';
+            }
+
+
+
+
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940900</id>
+        <re:rank scheme="https://stackoverflow.com">-3</re:rank>
+        <title type="text">The type of data stored in Button [closed]</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="database"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel"/>
+        <category scheme="https://stackoverflow.com/tags" term="button"/>
+        <author>
+            <name>Awatif Yusoh</name>
+            <uri>https://stackoverflow.com/users/8924892</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940900/the-type-of-data-stored-in-button"/>
+        <published>2020-07-16T18:03:23Z</published>
+        <updated>2020-07-16T18:03:23Z</updated>
+        <summary type="html">
+            &lt;p&gt;&lt;strong&gt;The type of data stored in Button, which is 0 and 1. Do you need an int or string? I'm not sure int or string&lt;/strong&gt;&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940867</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">mysqli insert with bind_param fails silently ($query-&gt;execute() returns false</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysqli"/>
+        <author>
+            <name>josh</name>
+            <uri>https://stackoverflow.com/users/5847512</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940867/mysqli-insert-with-bind-param-fails-silently-query-execute-returns-false"/>
+        <published>2020-07-16T18:01:39Z</published>
+        <updated>2020-07-16T18:20:05Z</updated>
+        <summary type="html">
+            &lt;p&gt;Any Idea what's wrong? I have spent hours looking at this and can't see it.
+            The connection is fine.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$DB = new mysqli(&amp;quot;127.0.0.1&amp;quot;, &amp;quot;Account Here&amp;quot;, &amp;quot;Password Here&amp;quot;, &amp;quot;DB Here&amp;quot;, &amp;quot;Port&amp;quot;);
+            $query = $DB-&amp;gt;prepare(&amp;quot;INSERT INTO `Users`(`FirstName`, `LastName`, `Email`, `UserName`, `UserNameHash`, `PasswordHash`, `PasswordSalt`) VALUES (?, ?, ?, ?, ?, ?, ?)&amp;quot;);
+            $query-&amp;gt;bind_param(&amp;quot;sssssss&amp;quot;, $FirstName, $LastName, $Email, $Username, $EUsername, $EPassword, $Salt);
+            if($query-&amp;gt;execute()){
+            echo &amp;quot;executed &amp;lt;BR /&amp;gt;&amp;quot;;
+            }else{
+            echo &amp;quot;Failed &amp;lt;BR /&amp;gt;&amp;quot;;
+            }
+            $query-&amp;gt;close();
+            mysqli_close($DB);
+            echo &amp;quot;complete&amp;quot;;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;Output:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;Failed
+            Complete
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940822</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How can I get column and value from PDO Procedure call</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="pdo"/>
+        <category scheme="https://stackoverflow.com/tags" term="fetch"/>
+        <category scheme="https://stackoverflow.com/tags" term="procedure"/>
+        <author>
+            <name>Anderson Silva</name>
+            <uri>https://stackoverflow.com/users/13124092</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940822/how-can-i-get-column-and-value-from-pdo-procedure-call"/>
+        <published>2020-07-16T17:59:11Z</published>
+        <updated>2020-07-16T17:59:11Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm new on PHP dev, and I need help.&lt;/p&gt;
+            &lt;p&gt;I have a procedure in MySQL that proc, create a temp table and execute select with parameters received.&lt;/p&gt;
+            &lt;p&gt;So, I'm trying to get that result with PHP and create a HTML Table with column name and values received from this procs. For example:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$q= $con-&amp;gt;prepare(&amp;quot;CALL unicos.NOC_cobranca_conecta_historico_msisdn_V2(:sDDDA, :sNumA, :sDtInit, :sDtEnd)&amp;quot;);
+            $stmt-&amp;gt;bindParam(&amp;quot;:sDDDA&amp;quot;, $sDDDA, PDO::PARAM_INT);
+            $stmt-&amp;gt;bindParam(&amp;quot;:sNumA&amp;quot;, $sNumA, PDO::PARAM_INT);
+            $stmt-&amp;gt;bindParam(':sDtInit', $sDtInit, PDO::PARAM_STR, 10);
+            $stmt-&amp;gt;bindParam(':sDtEnd', $sDtEnd, PDO::PARAM_STR, 10);
+            $q-&amp;gt;execute();
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;I try searching here some options but I can't get results. I tried to use this code:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;while ($arrValues = $q-&amp;gt;fetch(PDO::FETCH_ASSOC))
+            {
+            $tablestring .= &amp;quot;&amp;lt;tr&amp;gt;&amp;quot;;
+            foreach ($arrValues as $key=&amp;gt;$value){
+            $column_names[]=$key;
+            $tablestring .= &amp;quot;&amp;lt;td&amp;gt;&amp;quot;.$value.&amp;quot;&amp;lt;/td&amp;gt;&amp;quot;;
+            }
+            $tablestring .= &amp;quot;&amp;lt;/tr&amp;gt;&amp;quot;;
+            }
+
+            $headstring .= &amp;quot;&amp;lt;tr&amp;gt;&amp;quot;;
+            foreach ($column_names as $name)
+            {   $headstring .= &amp;quot;&amp;lt;td&amp;gt;&amp;quot;.$name.&amp;quot;&amp;lt;/td&amp;gt;&amp;quot;;
+            }
+            $headstring .= &amp;quot;&amp;lt;/tr&amp;gt;&amp;quot;;
+
+            echo &amp;quot;&amp;lt;table&amp;gt;&amp;quot;.$headstring.$tablestring.&amp;quot;&amp;lt;/table&amp;gt;&amp;quot;;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;I'm trying to get Column Name and Value for each line and mount a table with this result. How can I get this? I tried to change 'fetch(PDO::FETCH_ASSOC)' to other options and saw some example in the documentation (&lt;a href="https://www.php.net/manual/en/pdostatement.fetch.php" rel="nofollow noreferrer"&gt;https://www.php.net/manual/en/pdostatement.fetch.php&lt;/a&gt;) but I don't understand how can I get this into table HTML.&lt;/p&gt;
+            &lt;p&gt;Thanks.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940805</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Laravel polymorphic relationship naming seems inconsistent</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="laravel"/>
+        <author>
+            <name>0xN0</name>
+            <uri>https://stackoverflow.com/users/13361518</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940805/laravel-polymorphic-relationship-naming-seems-inconsistent"/>
+        <published>2020-07-16T17:58:00Z</published>
+        <updated>2020-07-16T17:58:00Z</updated>
+        <summary type="html">
+            &lt;p&gt;Referencing the docs, one-to-many polymorphic relationships are represented by&lt;/p&gt;
+            &lt;pre class="lang-php prettyprint-override"&gt;&lt;code&gt;class Comment extends Model
+            {
+            /**
+            * Get the owning commentable model.
+            */
+            public function commentable()
+            {
+            return $this-&amp;gt;morphTo();
+            }
+            }
+
+            class Post extends Model
+            {
+            /**
+            * Get all of the post's comments.
+            */
+            public function comments()
+            {
+            return $this-&amp;gt;morphMany('App\Comment', 'commentable');
+            }
+            }
+
+            class Video extends Model
+            {
+            /**
+            * Get all of the video's comments.
+            */
+            public function comments()
+            {
+            return $this-&amp;gt;morphMany('App\Comment', 'commentable');
+            }
+            }
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;where as many-to-many relations are represented by&lt;/p&gt;
+            &lt;pre class="lang-php prettyprint-override"&gt;&lt;code&gt;class Post extends Model
+            {
+            /**
+            * Get all of the tags for the post.
+            */
+            public function tags()
+            {
+            return $this-&amp;gt;morphToMany('App\Tag', 'taggable');
+            }
+            }
+
+            class Tag extends Model
+            {
+            /**
+            * Get all of the posts that are assigned this tag.
+            */
+            public function posts()
+            {
+            return $this-&amp;gt;morphedByMany('App\Post', 'taggable');
+            }
+
+            /**
+            * Get all of the videos that are assigned this tag.
+            */
+            public function videos()
+            {
+            return $this-&amp;gt;morphedByMany('App\Video', 'taggable');
+            }
+            }
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;However, since the (morphable_type, morphable_id) columns refer to Posts/Videos, it seems inconsistent to be using &lt;code&gt;morphTo()&lt;/code&gt; inside of Comments in one-to-many and &lt;code&gt;morphToMany()&lt;/code&gt; inside of &lt;code&gt;Post&lt;/code&gt; in many-to-many. I'd expect &lt;code&gt;morphToMany()&lt;/code&gt; inside of &lt;code&gt;Tag::posts()&lt;/code&gt; and &lt;code&gt;Tag::videos()&lt;/code&gt;.&lt;/p&gt;
+            &lt;p&gt;Is there a reasoning for why the naming seems flipped, because it feels to me like how in PHP built-in functions, needles and haystacks switch argument position in various functions for no apparent reason - it's something I can remember, but it doesn't make sense to me.&lt;/p&gt;
+            &lt;p&gt;Thanks!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940803</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">LDAP search for all users with a specific manager</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="ldap"/>
+        <category scheme="https://stackoverflow.com/tags" term="ldap-query"/>
+        <author>
+            <name>Steve Lloyd</name>
+            <uri>https://stackoverflow.com/users/4437053</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940803/ldap-search-for-all-users-with-a-specific-manager"/>
+        <published>2020-07-16T17:57:53Z</published>
+        <updated>2020-07-16T17:57:53Z</updated>
+        <summary type="html">
+            &lt;p&gt;Can't seem to search the manager attribute in LDAP. I want to return all users with Jane Doe as their manager. Any pointers would be appreciated.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;$filter = &amp;quot;(&amp;amp;(objectClass=user)(objectCategory=person)(manager=*Jane Doe*))&amp;quot;;
+            $result = ldap_search($ldap, $ldap_dn, $filter) or exit(&amp;quot;Unable to search LDAP server&amp;quot;);
+            $entries = ldap_get_entries($ldap, $result);
+            &lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940797</id>
+        <re:rank scheme="https://stackoverflow.com">-1</re:rank>
+        <title type="text">I'm building an ip block system using php and mysqli but the system only blocks the ip in the first row</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysqli"/>
+        <author>
+            <name>Barzuka</name>
+            <uri>https://stackoverflow.com/users/13913386</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940797/im-building-an-ip-block-system-using-php-and-mysqli-but-the-system-only-blocks"/>
+        <published>2020-07-16T17:57:26Z</published>
+        <updated>2020-07-16T18:11:57Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am currently building a simple ip block system:&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;    &amp;lt;?php
+            $servername = &amp;quot;localhost&amp;quot;;
+            $username = &amp;quot;root&amp;quot;;
+            $password = &amp;quot;&amp;quot;;
+            $dbname = &amp;quot;php&amp;quot;;
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn-&amp;gt;connect_error) {
+            die(&amp;quot;Connection failed: &amp;quot; . $conn-&amp;gt;connect_error);
+            }
+
+            $sql = &amp;quot;SELECT ip FROM blocked_adresses&amp;quot;;
+            $result = $conn-&amp;gt;query($sql);
+            $row = $result -&amp;gt; fetch_array(MYSQLI_ASSOC);
+            $ip = $_SERVER['REMOTE_ADDR'];
+
+            if (in_array ($ip, $row)) {
+            header(&amp;quot;Location: block.html&amp;quot;);
+            }
+
+            $conn-&amp;gt;close();
+            ?&amp;gt;
+            &lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;but the system only blocks the first row so it can only block one ip even though i can't see where i told it to choose the first row.&lt;/p&gt;
+            &lt;p&gt;please help.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940746</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Codeigniter invalid link opens as a valid link</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="codeigniter"/>
+        <author>
+            <name>kelvin elenwo</name>
+            <uri>https://stackoverflow.com/users/4124625</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940746/codeigniter-invalid-link-opens-as-a-valid-link"/>
+        <published>2020-07-16T17:54:14Z</published>
+        <updated>2020-07-16T17:54:14Z</updated>
+        <summary type="html">
+            &lt;p&gt;I tried building a news section page on my codeigniter project.
+            i have my class 'admin' and a function 'articles', normally the valid url is &lt;strong&gt;localhost/admin/articles&lt;/strong&gt;
+            but when i visit &lt;strong&gt;localhost/admin/articles/anything&lt;/strong&gt; it still opens the articles page.&lt;/p&gt;
+            &lt;p&gt;Every url can't be valid, please how do i fix this.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/62940726</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Storing image's as blob in mysql database with flutter</title>
+        <category scheme="https://stackoverflow.com/tags" term="php"/>
+        <category scheme="https://stackoverflow.com/tags" term="mysql"/>
+        <category scheme="https://stackoverflow.com/tags" term="flutter"/>
+        <category scheme="https://stackoverflow.com/tags" term="dart"/>
+        <category scheme="https://stackoverflow.com/tags" term="blob"/>
+        <author>
+            <name>saajid pasha</name>
+            <uri>https://stackoverflow.com/users/12282284</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/62940726/storing-images-as-blob-in-mysql-database-with-flutter"/>
+        <published>2020-07-16T17:53:03Z</published>
+        <updated>2020-07-16T17:53:03Z</updated>
+        <summary type="html">
+            &lt;p&gt;Is it good to store blob images in mysql database and fetch them in the flutter app using php or should I store them in a separate folder with their links in database? For a database with above 100K images what would be a better solution. Storing image paths would be difficult while backup i think. Can someone suggest what to do. It will be very helpful. Thank you in advance!&lt;/p&gt;
+
+        </summary>
+    </entry>
+</feed>

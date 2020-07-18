@@ -3,8 +3,12 @@
 namespace Vinelab\Rss\Tests\Parsers;
 
 use SimpleXMLElement;
+use Vinelab\Rss\Feed;
 use Vinelab\Rss\Parsers\XML;
+use Vinelab\Rss\Feeds\RSSFeed;
 use PHPUnit\Framework\TestCase;
+use Vinelab\Rss\Feeds\AtomFeed;
+use Vinelab\Rss\Contracts\FeedInterface;
 use Vinelab\Rss\Exceptions\InvalidXMLException;
 use Vinelab\Rss\Exceptions\InvalidFeedContentException;
 
@@ -16,6 +20,10 @@ class XMLTest extends TestCase
 
     public static $invalid;
 
+    public static $rss;
+
+    public static $atom;
+
     private $xml;
 
     public static function setUpBeforeClass() : void
@@ -23,6 +31,8 @@ class XMLTest extends TestCase
         self::$hunger = 'something that is not XML';
         self::$feed = new SimpleXMLElement(file_get_contents(__DIR__ . '/samples/valid.xml'));
         self::$invalid = new SimpleXMLElement(file_get_contents(__DIR__ . '/samples/invalid.xml'));
+        self::$rss = new SimpleXMLElement(file_get_contents(__DIR__.'/samples/0.92.rss.xml'));
+        self::$atom = new SimpleXMLElement(file_get_contents(__DIR__.'/samples/atom.xml'));
     }
 
     public function setUp() : void
@@ -35,8 +45,14 @@ class XMLTest extends TestCase
         $feed = self::$feed;
         $feed = $this->xml->parse($feed);
 
-        $this->assertInstanceOf('Vinelab\Rss\Contracts\FeedInterface', $feed);
-        $this->assertInstanceOf('Vinelab\Rss\Feed', $feed);
+        $this->assertInstanceOf(FeedInterface::class, $feed);
+        $this->assertInstanceOf(Feed::class, $feed);
+
+        $rss = $this->xml->parse(self::$rss);
+        $this->assertInstanceOf(RSSFeed::class, $rss);
+
+        $atom = $this->xml->parse(self::$atom);
+        $this->assertInstanceOf(AtomFeed::class, $atom);
     }
 
     public function test_parsing_invalid_xml()

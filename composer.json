@@ -1,6 +1,6 @@
 {
     "name": "vinelab/rss",
-    "description": "An elegant RSS 2.0 parser.",
+    "description": "An elegant RSS 2.0 and Atom client.",
     "license": "MIT",
     "authors": [
         {

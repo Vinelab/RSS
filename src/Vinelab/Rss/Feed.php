@@ -2,6 +2,8 @@
 
 namespace Vinelab\Rss;
 
+use Vinelab\Rss\Exceptions\InvalidFeedChannelException;
+
 class Feed implements Contracts\FeedInterface
 {
     /**
@@ -14,7 +16,7 @@ class Feed implements Contracts\FeedInterface
     /**
      * The articles of the feed.
      *
-     * @var array
+     * @var ArticlesCollection
      */
     protected $articles;
 
@@ -32,36 +34,6 @@ class Feed implements Contracts\FeedInterface
     public static function make($channel)
     {
         return new static($channel);
-    }
-
-    /**
-     * Set the information for the feed.
-     *
-     * @param array $channel
-     */
-    public function setInfo($channel)
-    {
-        unset($channel['item']);
-
-        $this->info = $channel;
-    }
-
-    /**
-     * Set the articles for the feed.
-     *
-     * @param array $channel
-     */
-    public function setArticles($channel)
-    {
-        $this->articles = new ArticlesCollection();
-
-        if(is_array($channel['item'])){
-            foreach ($channel['item'] as $entry) {
-                $this->addArticle($entry);
-            }
-        }else{
-            $this->addArticle($channel['item']);
-        }
     }
 
     /**
