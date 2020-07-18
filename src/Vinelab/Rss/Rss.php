@@ -6,6 +6,7 @@ use Vinelab\Http\Client;
 use Vinelab\Rss\Parsers\XML;
 use Vinelab\Rss\Parsers\JSON;
 use Vinelab\Http\Client as HttpClient;
+use Vinelab\Rss\Contracts\FeedInterface;
 use Vinelab\Rss\Exceptions\InvalidFeedFormatException;
 
 class Rss
@@ -43,9 +44,9 @@ class Rss
      * @param string $url
      * @param string $format
      *
-     * @return Vinelab\Rss\ArticlesCollection
+     * @return ArticlesCollection
      */
-    public function feed($url, $format = 'xml')
+    public function feed($url, $format = 'xml') : ArticlesCollection
     {
         return $this->parse($this->fetch($url), $format);
     }
@@ -83,7 +84,7 @@ class Rss
      *
      * @return Vinelab\Rss\ArticlesCollection
      */
-    public function parse($response, $format)
+    public function parse($response, $format) : FeedInterface
     {
         switch ($format) {
             case 'xml':

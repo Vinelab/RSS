@@ -47,7 +47,7 @@ class Article
      *
      * @return Vinelab\Rss\Article
      */
-    public static function make($article)
+    public static function make($article) : self
     {
         return new static($article);
     }

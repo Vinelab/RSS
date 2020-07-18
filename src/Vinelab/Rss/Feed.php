@@ -2,6 +2,7 @@
 
 namespace Vinelab\Rss;
 
+use Vinelab\Rss\Contracts\FeedInterface;
 use Vinelab\Rss\Exceptions\InvalidFeedChannelException;
 
 class Feed implements Contracts\FeedInterface
@@ -31,7 +32,7 @@ class Feed implements Contracts\FeedInterface
         $this->setArticles($channel);
     }
 
-    public static function make($channel)
+    public static function make($channel) : FeedInterface
     {
         return new static($channel);
     }
