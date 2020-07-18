@@ -2,9 +2,11 @@
 
 namespace Vinelab\Rss\Tests\Parsers;
 
-use PHPUnit_Framework_TestCase as TestCase;
 use SimpleXMLElement;
 use Vinelab\Rss\Parsers\XML;
+use PHPUnit\Framework\TestCase;
+use Vinelab\Rss\Exceptions\InvalidXMLException;
+use Vinelab\Rss\Exceptions\InvalidFeedContentException;
 
 class XMLTest extends TestCase
 {
@@ -14,16 +16,18 @@ class XMLTest extends TestCase
 
     public static $invalid;
 
-    public static function setUpBeforeClass()
+    private $xml;
+
+    public static function setUpBeforeClass() : void
     {
         self::$hunger = 'something that is not XML';
-        self::$feed = new SimpleXMLElement(file_get_contents('./tests/feeds/xxx.xml'));
-        self::$invalid = new SimpleXMLElement(file_get_contents('./tests/feeds/invalid.xml'));
+        self::$feed = new SimpleXMLElement(file_get_contents(__DIR__.'/feeds/valid.xml'));
+        self::$invalid = new SimpleXMLElement(file_get_contents(__DIR__.'/feeds/invalid.xml'));
     }
 
-    public function setUp()
+    public function setUp() : void
     {
-        $this->xml = new XML($this->articles);
+        $this->xml = new XML();
     }
 
     public function test_parsing_valid_feed()
@@ -35,19 +39,15 @@ class XMLTest extends TestCase
         $this->assertInstanceOf('Vinelab\Rss\Feed', $feed);
     }
 
-    /**
-     * @expectedException Vinelab\Rss\Exceptions\InvalidXMLException
-     */
     public function test_parsing_invalid_xml()
     {
+        $this->expectException(InvalidXMLException::class);
         $this->xml->parse(self::$hunger);
     }
 
-    /**
-     * @expectedException Vinelab\Rss\Exceptions\InvalidFeedContentException
-     */
     public function test_parsing_invalid_feed()
     {
+        $this->expectException(InvalidFeedContentException::class);
         $this->xml->parse(self::$invalid);
     }
 }
