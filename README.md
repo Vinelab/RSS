@@ -93,6 +93,12 @@ foreach ($feed->articles() as $article) {
 }
 ```
 
+You may also access the article's original XML format with
+
+```php
+$article->xml();
+```
+
 ### Got Questions?
 Reach out in the [issues](https://github.com/vinelab/rss/issues).
 

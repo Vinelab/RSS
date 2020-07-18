@@ -2,6 +2,8 @@
 
 namespace Vinelab\Rss;
 
+use SimpleXMLElement;
+
 class Article
 {
     /**
@@ -9,7 +11,7 @@ class Article
      *
      * @var SimpleXMLElement
      */
-    protected $element = null;
+    protected $xml = null;
 
     /**
      * Holds the article information.
@@ -25,7 +27,7 @@ class Article
      */
     public function __construct($article)
     {
-        $this->element = $article;
+        $this->xml = $article;
 
         foreach ($article as $attribute => $value) {
             // for enclosure, get the attributes as array
@@ -55,9 +57,9 @@ class Article
      *
      * @return SimpleXMLElement
      */
-    public function getElement()
+    public function xml()
     {
-        return $this->element;
+        return $this->xml;
     }
 
     /**
