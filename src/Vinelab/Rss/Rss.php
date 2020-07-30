@@ -44,9 +44,9 @@ class Rss
      * @param string $url
      * @param string $format
      *
-     * @return ArticlesCollection
+     * @return FeedInterface
      */
-    public function feed($url, $format = 'xml') : ArticlesCollection
+    public function feed($url, $format = 'xml') : FeedInterface
     {
         return $this->parse($this->fetch($url), $format);
     }
